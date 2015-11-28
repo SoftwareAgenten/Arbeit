@@ -1,0 +1,47 @@
+% Software-Agenten im Internet
+% Copyright Florian Pircher <http://addpixel.net/>
+
+\RequirePackage[l2tabu,orthodox]{nag} % enforce best practices
+
+\documentclass[twocolumn]{article}
+
+% Layout
+\usepackage[a4paper,twocolumn]{geometry}
+\usepackage{booktabs} % nicer tables
+\usepackage[hang,flushmargin]{footmisc} % don't indent all the things
+% Text
+\usepackage[utf8]{inputenc}
+\usepackage[english,ngerman]{babel}
+\usepackage{url}
+\usepackage[style=authortitle-icomp]{biblatex}
+% Typography
+\usepackage{microtype} % tweak spacing and sizing so everything fits nicely
+\usepackage[babel,german=guillemets]{csquotes} % harmonize (french) quotes
+
+% Basic Configuration
+\bibliography{master.bib}
+
+\begin{document}
+
+\twocolumn[{
+  \title{Software-Agenten im Internet}
+  \author{
+    Florian Pircher\\
+    Technologische Fachoberschule\\
+    Oberschulzentrum Fallmerayer\\
+    Brixen, Italien
+  }
+  \date{\today}
+  \maketitle
+}]
+
+\renewcommand{\abstractname}{Abstract}
+\begin{abstract}
+  Menschen sind schon lange nicht mehr die einzigen Nutzer des Internets. Inzwischen werden über 50\,\% aller Webseiten-Aufrufe von autonomer Software getätigt. Diese auch als Bots bezeichnete Softwares agieren in den Schatten des Netzes. Unbemerkt indexieren sie Webseiten, verbreiten Spam, legen gefälscht Profile an oder versuchen in Datenbanken einzubrechen.
+  
+  Hindernisse wie CAPTCHAs oder Honeypots galten bislang als effektive Gegenmittel, allerdings verhilft der rapide Fortschritt im Bereich der Künstlichen Intelligenz modernen Bots auch solcherart Barrieren zu durchbrechen.
+\end{abstract}
+
+%\onecolumn \printbibliography
+
+\end{document}

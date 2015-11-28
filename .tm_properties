@@ -1,1 +1,1 @@
-TM_LATEX_MASTER = "$CWD/master.tex"
+TM_LATEX_MASTER = "$CWD/LaTeX/master.tex"

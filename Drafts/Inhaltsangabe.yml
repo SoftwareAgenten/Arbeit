@@ -1,0 +1,61 @@
+Inhaltsangabe:
+  Einleitung:
+    - Motivation des Schreibens
+    - Aufbau der Arbeit
+  Überblick:
+    - Was sind Software-Agenten?
+    - Wer baut sie?
+    - Wo werden sie eingesetzte?
+  Forschung:
+    - 'Welche Methoden nutze ich, um Bots zu untersuchen?'
+  Beobachten_und_Verstehen:
+    E-Mail:
+      Spambots:
+        - Wie viele Prozent aller Mails sind Spam?
+        - Für welches Produkt oder Dienstleistung wird geworben?
+        - 'Mittel Catch-All E-Mail-Server nachforschen, an welche Adressen Spam gesendet wird, sofern nur die Domain bekannt ist.'
+        - Wie kann man sich gegen Spambots schützen?
+        - Wie gut helfen Tricks wie “name (at) domain (dot) tdl” oder das Weglassen der `mailto` Adresse?
+        - Welche Dienste geben E-Mail-Adressen weiter?
+      Phishing:
+        - Was ist Phishing?
+        - 'Ist das etwas, das Bots inzwischen auch können?'
+    Web:
+      - Nachbau der WordPress Login Seite um die Anmelde-Versuche von Bots zu protokollieren.
+      - 'Was Bots tun, wenn sie ein ungeschütztes Kommentarsystem finden.'
+    AI:
+      - 'Inwiefern kann man Viren, die sich über E-Mail und der ähnlichen verbreiten, als intelligentes Leben bezeichnen?'
+      - Welche Arten von CAPTCHA können von Bots überwunden werden?
+      - Was ist ein Honeypot?
+      - Können Bots Honeypots erkennen und überwinden?
+      - Was hat die Zukunft auf Lager?
+      - Human Interaction Proof mittels Cursor-Tracking oder Klick-Verhalten.
+    Authentifizierung:
+      - 'Standard-Passwörter, Brute-Force und wie man ein gutes Passwort anlegt'
+      - Passwortmanager
+      - Public-Key Kryptographie
+  Eigener_Software_Agent:
+    - Eigene Bots schreiben (mit eigener AI in Haskell oder Lisp)
+    - Wie sich mein eigener Bot durch das Internet schlängelt.
+    - Wo er stecken bleibt.
+    - Tricks der untersuchen Bots abschauen und eventuell verbessern.
+    - 'Wie das Internet reagiert, wenn mein Bot seinen User-Agent, sein Verhalten oder seine IP-Adresse ändert.'
+    - 'The Da Captcha Code: Einem Bot das Lesen von CAPTCHAs mittels Maschine Learning beibringen. Einsatz von Klassifizierungs-Algorithmen; basierend auf der Wolfram-Language.'
+  Open-Source:
+    - Warum um Himmels Willen ich PHP verwende
+    - Installation der Bot-Tracking-Suite
+    - git Repository auf GitHub
+    - MIT-Lizenz
+  Zusammenfassung:
+    - Allgemeine Zusammenfassung des Inhalts
+    - Und was lernen wir daraus?
+  Weiterführende_Literatur:
+    - Bücher
+    - Arbeiten
+    - Webseiten
+    - Vorträge
+  Literaturverzeichnis:
+    - Bücher
+    - Arbeiten
+    - Webseiten
+    - Vorträge

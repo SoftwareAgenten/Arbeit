@@ -1,0 +1,12 @@
+2015-11-29  Florian Pircher  <git@leuchtschirm.com>  #R1
+  * Erstellen einer Ordnerstriktur
+  * Anlegen der CHANGELOG Datei
+  * Wechsel von “Tabs” zu “Spaces”
+  * Überarbeitetes Abstract (keine Fragen mehr)
+  * Überarbeitete Inhaltsangabe (mehr Kapitel)
+
+2015-11-18  Florian Pircher  <git@leuchtschirm.com>  #R0
+  * Anlegen des Projekts
+  * Anlegen der master.tex sowie der master.bib Datei
+  * Konzeptionierung der Inhaltsangabe
+  * Verfassen des Abstract-Entwurfs
