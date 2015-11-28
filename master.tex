@@ -1,0 +1,45 @@
+% Software-Agenten im Internet
+% Copyright Florian Pircher <http://addpixel.net/>
+
+\RequirePackage[l2tabu,orthodox]{nag} % enforce best practices
+
+\documentclass[twocolumn]{article}
+
+% Layout
+\usepackage[a4paper,twocolumn]{geometry}
+\usepackage{booktabs} % nicer tables
+\usepackage[hang,flushmargin]{footmisc} % don't indent all the things
+% Text
+\usepackage[utf8]{inputenc}
+\usepackage[english,ngerman]{babel}
+\usepackage{url}
+\usepackage[style=authortitle-icomp]{biblatex}
+% Typography
+\usepackage{microtype} % tweak spacing and sizing so everything fits nicely
+\usepackage[babel,german=guillemets]{csquotes} % harmonize (french) quotes
+
+\bibliography{master.bib}
+
+\begin{document}
+
+\twocolumn[{
+	\title{Software-Agenten im Internet}
+	\author{
+		Florian Pircher\\
+		Technologische Fachoberschule\\
+		Oberschulzentrum Fallmerayer\\
+		Brixen, Italien
+	}
+	\date{\today}
+	\maketitle
+}]
+
+\begin{abstract}
+	Menschen sind schon lange nicht mehr die einzigen Nutzer des Internets. Inzwischen werden über 50\,\% aller Webseiten-Aufrufe von autonomer Software, auch Bots genannt, getätigt. Sie agieren in den Schatten des Netzes. Unbemerkt indexieren sie Webseiten, verbreiten Spam, legen gefälscht Profile an oder versuchen in Datenbanken einzubrechen.
+	
+	Wer setzt solche Software ein? Wozu sind Bots heutzutage in der Lage? Woran scheitern sie noch? Ich begab mich in die Wildnis des Internets um dort auf Basis eigener Forschung die Antworten auf diese Fragen zu finden.
+\end{abstract}
+
+%\onecolumn \printbibliography
+
+\end{document}
