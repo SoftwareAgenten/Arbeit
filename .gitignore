@@ -254,3 +254,4 @@ tmtags
 ### Custom ###
 ## Florian Pircher ##
 *.master.lb
+*.document.lb
