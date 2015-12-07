@@ -1,1 +1,30 @@
+# Variables
 TM_LATEX_MASTER = "$CWD/LaTeX/master.tex"
+
+# Filter
+include = "{$include,.gitignore}"
+exclude = "{$exclude,*.{aux,bbl,bcf,blg,fdb_latexmk,fls,log,run.xml,synctex.gz}}"
+
+# TextMate
+spellChecking = true
+
+[ text ]
+softWrap   = false
+wrapColumn = 80
+softTabs   = true
+tabSize    = 2
+
+[ text.plain ]
+softWrap   = true
+wrapColumn = 80
+softTabs   = true
+tabSize    = 2
+
+[ text.html.markdown ]
+softWrap   = true
+wrapColumn = "Use Window Frame"
+softTabs   = false
+tabSize    = 4
+
+[ source.tm-properties ]
+spellChecking = false
