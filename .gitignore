@@ -250,6 +250,7 @@ pythontex-files-*/
 *.tmproj
 *.tmproject
 tmtags
+*.master.watcher_pid
 
 ### Custom ###
 # Florian Pircher
