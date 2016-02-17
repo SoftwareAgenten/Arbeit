@@ -16,7 +16,10 @@
     4.1.4  E-Mail-Adressen Verschleierung
     4.1.5  Kommentare
   4.2  Phishing
+    4.2.1  Definition
   4.3  Brute Force Login
+    4.3.1  Definition
+    4.3.2  Wirksamkeit
   4.4  Künstliche Intelligenz
     4.4.1  Überblick
     4.4.2  CAPTCHA
