@@ -3,7 +3,7 @@
 
 \RequirePackage[l2tabu,orthodox]{nag} % enforce best practices
 
-\documentclass[twocolumn]{article}
+\documentclass{article}
 
 % Layout
 \usepackage[a4paper]{geometry}
@@ -22,10 +22,8 @@
 \bibliography{master.bib}
 
 \begin{document}
-  \twocolumn[
-    \input{TeX/0.1-title}
-    \input{TeX/0.2-abstract}
-  ]
+  \input{TeX/0.1-title}
+  \input{TeX/0.2-abstract}
   
   \include{TeX/0.3-inhaltsverzeichnis}
   
