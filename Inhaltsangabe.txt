@@ -16,12 +16,12 @@
     4.1.4  E-Mail-Adressen Verschleierung
     4.1.5  Kommentare
   4.2  Phishing
-  4.3  Brute Force Login
-  4.4  Künstliche Intelligenz
-    4.4.1  Überblick
-    4.4.2  CAPTCHA
-    4.4.3  Honeypot
-    4.4.4  Prognose
+    4.2.1  Definition
+  4.3  Künstliche Intelligenz
+    4.3.1  Überblick
+    4.3.2  CAPTCHA
+    4.3.3  Honeypot
+    4.3.4  Prognose
 5  Eigener Software-Agent
   5.1  Navigation
     5.1.1  Prototyp
