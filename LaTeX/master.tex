@@ -10,9 +10,11 @@
 \usepackage{booktabs} % nicer tables
 \usepackage[hang,flushmargin]{footmisc} % don't indent all the things
 % Text
+\usepackage{textcomp} % <http://tex.stackexchange.com/a/166791/81911>
 \usepackage[utf8]{inputenc}
 \usepackage[english,ngerman]{babel}
 \usepackage{hyperref}
+\usepackage{listings} % code highlighting
 \usepackage[style=authortitle-icomp]{biblatex}
 % Typography
 \usepackage{microtype} % tweak spacing and sizing so everything fits nicely
@@ -20,6 +22,12 @@
 
 % Basic Configuration
 \bibliography{master.bib}
+
+\lstset{
+  frame=single,
+  upquote=true,
+  columns=fixed
+}
 
 \begin{document}
   \input{TeX/0.1-title}
@@ -45,6 +53,11 @@
   \label{sec:eigener_software_agent}
   \include{TeX/5.2-maschinelles-lernen-captcha}
   % section eigener_software_agent (end)
+  
+  \section{Die Software-Agenten Suite} % (fold)
+  \label{sec:die_software_agenten_suite}
+  \include{TeX/6.0-software-agenten-suite}
+  % section die_software_agenten_suite (end)
   
   \input{TeX/9.0-bibliography}
 \end{document}
