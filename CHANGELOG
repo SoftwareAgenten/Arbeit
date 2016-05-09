@@ -1,3 +1,8 @@
+2016-03-31  Florian Pircher  <git@leuchtschirm.com>  R3
+  * Ignorieren der Master PDF Datei
+  * Anlegen aller nötigen Definitionen
+  * Formatierung der TeX Dateien auf 80char Breite
+
 2015-12-06  Florian Pircher  <git@leuchtschirm.com>  R2
   * Erweitertes, einspaltiges Abstract mit den Zielen der Arbeit
   * Ausformulierung der Inhaltsangabe und der Kapitel-Titel
