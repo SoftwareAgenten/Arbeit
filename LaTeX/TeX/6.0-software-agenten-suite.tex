@@ -1,0 +1,201 @@
+Die Daten über das Browse-Verhalten von Software-Agenten wurden von
+einer eigens für diese Arbeit erstellten Software-Suite gesammelt. Die
+Suite wurde unter dem Namen \emph{Great Attractor}\footnote{Der Name wurde in Anlehnung an das kosmische Filament, im deutschsprachigen Raum auch als \emph{Großer Attraktor} bekannt, gewählt.} im
+Internet unter der MIT-Lizenz\footnote{Eine Kopie der Lizenz ist unter \url{https://legal.addpixel.net/licenses/MIT/} zu finden.} auf der Open-Source Code
+Plattform GitHub.com veröffentlicht.\footnote{GitHub.com Projektseite: \url{https://github.com/SoftwareAgenten/Great-Attractor}}
+
+Die MIT-Lizenz erlaubt die Vervielfältigung, Veränderung und
+Unterlizenzierung der \emph{Great Attractor} Softwares sowohl für den
+privaten als auch den kommerziellen Gebrauch. Dabei muss die
+Lizenzangabe samt Copyright Anmerkung unverändert beibehalten
+werden.\footnote{Hierbei handelt es sich lediglich um eine kurze Zusammenfassung die keinerlei Anspruch auf Vollständigkeit oder Rechtsgültigkeit ausübt. Eine vollständige Kopie der Lizenz findet sich unter \url{https://legal.addpixel.net/licenses/MIT/}.} Zufolge der Open Source Initiative ist die
+MIT-Lizenz der Open Source Definition konform.\footcite{license:MIT} \emph{Open
+Source} bedeutet in diesem Kontext: der Quellcode der \emph{Great
+Attractor} Softwares kann frei eingesehen werden und in anderen
+Software-Projekten zum Einsatz kommen.
+
+GitHub.com wurde zugrunde der folgenden Argumente als Open-Source Code
+Plattform gewählt.
+
+\begin{enumerate}
+\item
+  GitHub.com ist zur Zeit dieses Schreibens die populärste Open-Source
+  Code Plattform\footcite{githubPop} und erfreut sich demgemäß einer großen
+  Anzahl an aktiven Nutzern.
+\item
+  GitHub setzt auf der \emph{git} Versionsverwaltungssoftware auf,
+  welche sowohl bei den \emph{Great Attractor} Softwares zum Einsatz
+  kommt als auch bei der Erstellung der \emph{Software-Agenten im
+  Internet} Arbeit verwendet wird.
+\end{enumerate}
+
+\subsection{Architektur und Philosophie} % (fold)
+\label{sub:architektur_und_philosophie}
+\emph{Great Attractor} (GA) besteht aus zwei Kernkomponenten: dem
+gleichnamigen Archiv an von Bots produzierten Daten\footnote{vollständig einsichtbar unter \url{https://github.com/SoftwareAgenten/Great-Attractor}}
+und eine Reihe an Applikationen, die Datensätze für das Archiv
+sammeln.\footnote{Eine Liste alle Applikation kann unter \url{https://github.com/SoftwareAgenten/Great-Attractor#data-collectors} eingesehen werden.}
+
+Das GA-System erfüllt folgende Anforderungen.
+
+\begin{itemize}
+\item
+  \textbf{Portabilität der Daten}. Sämtliche durch GA gesammelte Daten
+  werden im JSON-Format auf dem Dateisystem gesichert. Dies erleichtert
+  es Sicherungskopien der Datensätze anzufertigen und diese folglich zu
+  veröffentlichen bzw. auf anderen Wegen zu vervielfältigen.
+\item
+  \textbf{Portabilität des Systems}. GA wurde in der Programmiersprache
+  PHP verfasst, welche auf allen gängigen
+  Computer-Betriebsystemen\footnote{Darunter: \emph{Linux}, \emph{FreeBSD}, \emph{Unix}, \emph{Windows} und
+\emph{Darwin}} genutzt werden kann.
+  Außerdem ist das JSON Datenaustauschformat, in welchem Daten gesichert
+  werden, einfach für Menschen zu lesen\footcite{jsonDe} und für
+  Maschinen einfach zu parsen.\footcite{jsonDe} Dies erlaubt es
+  nicht-GA-Systemen auf die gewonnenen Daten zurückzugreifen und
+  ergänzende Operationen auszuführen.
+\end{itemize}
+% subsection architektur_und_philosophie (end)
+
+\subsection{Funktionsweise der GA-Softwares} % (fold)
+\label{sub:funktionsweise_der_ga_softwares}
+Das GA-System sammelt Daten über das Verhalten von Webseiten-Besuchern.
+Um diese Daten zu erheben, muss es in eine bestehende Webseite
+eingebunden werden die folglich als Wirt dient. Sämtliche Logik und
+Konfiguration einer GA-Software findet sich in einer einzigen PHP-Datei:
+\texttt{system.php}. Dies erleichtert es, die GA-Software in eine
+Webseite einzubinden. Die Datei befindet sich in einem Verzeichnis
+namens \texttt{great-attractor}, welches als Namensraum\footcite{wp:namensraum}
+dient. Aufgezeichnete Daten werden in ein Verzeichnis namens
+\texttt{data} als JSON-Dateien geschrieben. Sollte dieser Name mit dem
+bestehenden Webseite-System in Konflikt
+
+\subsubsection{Installation} % (fold)
+\label{ssub:ga_installation}
+Es empfiehlt sich, das \texttt{great-attractor} Verzeichnis im
+Root-Verzeichnis der Wirt-Webseite zu platzieren. Dies erleichtert die
+Installation der Software. Sollte die Wirt-Webseite ebenso PHP als
+Skript-Sprache nutzen, so lässt sich das GA-System wie folgt einbinden.
+
+\begin{lstlisting}[language=PHP]
+<?php
+
+# GA
+
+include_once('great-attractor/system.php');
+
+ga_init('tracking-name');
+ga_register_visit();
+ga_register_request();
+
+if (!empty($_POST)) {
+  ga_register_form_data($_POST);
+}
+
+# END GA
+\end{lstlisting}
+
+Obiger PHP-Code bindet das System ein (\texttt{include\_once}), legt den
+Namen der Webseite fest (\texttt{ga\_init}), registriert den Besuch
+(\texttt{ga\_register\_visit}), registriert die HTTP-Anfrage
+(\texttt{ga\_register\_request}) und, sollte ein Formular mit
+HTTP-POST-Daten abgesendet worden sein, registriert das POST Objekt
+(\texttt{ga\_register\_form\_data}).
+
+Falls das Webseite-System nicht PHP nutzt, muss manuell eine
+Software-Brücke zum GA-System gebaut werden, worüber die oben genannten
+Funktionen aufgerufen werden.
+% subsubsection ga_installation (end)
+
+\subsubsection{Konfiguration} % (fold)
+\label{ssub:ga_konfiguration}
+Innerhalb der Datei \texttt{system.php} findet sich die \texttt{\$paths}
+Variable. Sie listet sämtliche Verzeichnisse, die für das GA-System
+notwendig sind. Verzeichnisse, die in \texttt{\$paths} aufgeführt
+werden, nicht aber Bestandteil des Dateisystems sind, werden bei der
+ersten Ausführung der GA-Software automatisch angelegt.
+% subsubsection ga_konfiguration (end)
+
+\subsubsection{Verhalten} % (fold)
+\label{ssub:verhalten}
+Das GA-System kann drei verschiedene Arten von Daten erheben: Die Anzahl
+der Besuche (wobei eine Sitzung als ein Besuch gezählt wird), der
+HTTP-Header einer Anfrage und die Einzelheiten einer HTTP-POST-Anfrage
+(die Daten eines abgesendeten Web-Formulars).
+% subsubsection verhalten (end)
+
+\paragraph{Besuche-Zähler} % (fold)
+\label{par:ga_besuche_zahler}
+Die Funktion \texttt{void\ ga\_register\_visit()} erhöht den
+Besuche-Zähler für eine gegebene Webseite. Der Name der Webseite wird
+durch \texttt{void\ ga\_init(\$page\_name)} festgelegt. Wiederholte
+Aufrufe derselben Sitzung werden nicht als weitere Besuche gezählt.
+
+Ist der HTTP-GET-Parameter \texttt{thisisanadmin} auf 1 gesetzt wird der
+Besuch, sowie Folgebesuche derselben Sitzung, nicht von der Software
+erfasst.
+% paragraph ga_besuche_zahler (end)
+
+\paragraph{HTTP-Header} % (fold)
+\label{par:ga_http_header}
+Mit der Funktion \texttt{void\ ga\_register\_request()} sichert GA den
+HTTP-Request-Header und weitere Kenndaten der Anfrage. Darunter finden
+sich:
+
+\begin{itemize}
+\item
+  Name der Webseite (\texttt{pageName})
+\item
+  aktuelle Uhrzeit samt Zeitzone (\texttt{time}, \texttt{timezone})
+\item
+  vollständige URL (\texttt{url})
+\item
+  Referenz auf die Quelle der Anfrage (\texttt{reference})
+\item
+  IP-Adresse des Besuchers (\texttt{ipAddress})
+\item
+  eindeutige ID, die der Sitzung zugewiesen wurde (\texttt{userId})
+\item
+  eindeutige ID, die die Anfrage beschreibt (\texttt{id})
+\item
+  eine Liste aller vorhergehenden Anfrage-IDs der Sitzung
+  (\texttt{previousRequestIds})
+\item
+  diverse Informationen über die Geoposition des Besuchers, darunter:
+  Stadt, Region und Ländercode (\texttt{geo})
+\end{itemize}
+% paragraph ga_http_header (end)
+
+\paragraph{POST-Daten} % (fold)
+\label{par:ga_post_daten}
+Die Funktion \texttt{void\ ga\_register\_form\_data(\$post)} nimmt ein
+PHP-POST Objekt (für gewöhnlich \texttt{\$\_POST}) entgegen und sichert
+es als JSON-Datei. Weiters hinzugefügt werden: die Zeit (\texttt{time}),
+die Zeitzone (\texttt{timezone}), der Namen der Webseite
+(\texttt{pageName}), die ID der Sitzung (\texttt{userId}), die ID der
+Anfrage (\texttt{requestId}) und der Dateiname der Anfrage
+(\texttt{requestFilename}).
+% paragraph ga_post_daten (end)
+
+\subsubsection{Einsatz} % (fold)
+\label{ssub:ga_einsatz}
+Nachdem eine GA-Software in eine Wirt-Webseite eingebunden wurde, muss
+diese online veröffentlicht werden. Die bloße Existenz einer Webseite
+garantiert nicht für Besuche von Software-Agenten. Es empfiehlt sich
+daher Links zur Webseite auf diversen Online-Plattformen zu publizieren.
+Damit die einzelnen Plattformen, also die Quellen der Aufrufe, von der
+GA-Software zuverlässig identifiziert werden können, muss der Link auf
+die Webseite den GET-Parameter \texttt{r} bei sich führen, der die
+Quelle beschreibt.
+
+Beispiel: die Wirt-Webseite befindet sich unter www.example.org und ein
+Link dorthin soll auf der Plattform www.twitter.com publiziert werden.
+Demnach könnte der auf www.twitter.com publizierte Link wie folgt
+gestaltet werden: www.example.org/?r=tw.
+
+Außerdem empfiehlt es sich eine Liste zu führen, auf der das Datum und
+die Zeit der Publizierung auf den einzelnen Plattformen verzeichnet
+wird. So lassen sich bessere Rückschlüsse über das Verhalten der
+Besucher ziehen.
+% subsubsection ga_einsatz (end)
+% subsection funktionsweise_der_ga_softwares (end)
