@@ -1,3 +1,8 @@
+---
+D = Draft
+P = Pending Approval
+M = Approved Markdown
+---
 ✓ 0  Abstract
   1  Einleitung
     1.1  Motivation
@@ -20,7 +25,7 @@
 ✓     4.3.1  Überblick
 ✓     4.3.2  CAPTCHA
 ✓     4.3.3  Honeypot
-      4.3.4  Prognose
+D     4.3.4  Prognose
   5  Eigener Software-Agent
     5.1  Navigation
       5.1.1  Prototyp
