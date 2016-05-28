@@ -31,7 +31,6 @@ P     4.3.4  Prognose
       5.1.1  Prototyp
       5.1.2  Erkenntnissen anwenden
       5.1.3  User-Agent Spoofing
-    5.2  Maschinelles Lernen: CAPTCHA
 ✓ 6  Die Software-Agenten Suite
 ✓   6.1  Überblick
 ✓   6.2  Aufbau
