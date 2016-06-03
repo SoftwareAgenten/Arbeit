@@ -9,7 +9,9 @@ M = Approved Markdown
     1.2  Aufbau
   2  Überblick
 ✓   2.1  Definition
-    2.2  Einsatz
+P   2.2  Einsatz
+P     2.2.1  Gutartige Bots
+P     2.2.2  Bösartige Bots
   3  Forschung
     3.1  Rahmenbedingungen
     3.2  Methoden
