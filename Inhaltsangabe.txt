@@ -28,13 +28,15 @@ P     4.3.1  Überblick
 P     4.3.2  CAPTCHA
 P     4.3.3  Honeypot
 P     4.3.4  Prognose
-  5  Eigener Software-Agent
-    5.1  WWWEB
-D     5.1.1  Überblick
-D     5.1.2  Architektur
-D     5.1.3  Installation
-D     5.1.4  Einsatz
-    5.2  Auswertung robots.txt
+P 5  Eigener Software-Agent
+P   5.1  WWWEB
+P     5.1.1  Überblick
+P     5.1.2  Architektur
+P     5.1.3  Installation
+P     5.1.4  Einsatz
+P   5.2  Auswertung der WWWEB-Daten
+P     5.2.1  Nicht zugelassene Verzeichnisse
+P     5.2.2  User-Agents
 ✓ 6  Die Software-Agenten Suite
 ✓   6.1  Überblick
 ✓   6.2  Aufbau
