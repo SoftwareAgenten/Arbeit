@@ -1,0 +1,93 @@
+\subsection{Einsatz von Software-Agenten}
+\label{sub:einsatz-von-software-agenten}
+
+Das Internet ist inzwischen zu groß, um allein von Menschen kuriert und
+gepflegt zu werden. So haben sich immer mehr Arten von Bots gebildet, die immer
+spezifischere Aufgaben übernehmen. Die Einsatzgebiete lassen sich grob in zwei
+Lager aufteilen: gutartige Bots und bösartige Bots. Gutartige Bots zeichnen
+sich dadurch aus, dass sie gemeinnützige, konstruktive Arbeiten leisten und
+sich bei Bedarf auch freiwillig blockieren lassen. Folgende Listen führen die
+wichtigsten Vertreter auf.
+
+\subsubsection{Gutartige Bots}
+\label{ssub:gutartige-bots}
+
+\begin{description}
+  \item[Search Robots]
+  Ein Paradebeispiel für gutartige Bots sind Webcrawler, die sich auf die
+  Indexierung von Webseiten für Suchmaschinen spezialisiert haben. Das W3C, das
+  Standardisierungsgremium für das \emph{World Wide Web},
+  \footcite{w3c:standards} definiert mehrere Standards, die es
+  Website-Administratoren erlauben Bots den Zugang zur Webseite vollständig,
+  oder auch nur zu Teilen, zu unterbinden\footcite{w3c:searchBots}
+  \label{robotstxt} Der am weitesten verbreitete Standard spezifiziert eine
+  Datei namens \texttt{robots.txt}, welche Blockaden für Bots
+  definiert\footcite{w3c:robotsTxt} Alle großen Suchmaschinen erklären ihre
+  Konformität zu einem oder mehreren dieser
+  Standards\footcite{robotsTagGoogle}\footcite{yandexUsingRobotsTxt}
+  \footcite{duckduckgoBot}
+  
+  \item[Feed-Crawler]
+  Damit RSS-Clients stets mit den neuesten Inhalten gefüttert werden können,
+  müssen Bots RSS-/Atom-Feeds periodisch anfragen. Diese Feeds werden von
+  Weblogs und anderen Webseiten zumeist exklusive für Webcrawler angelegt und
+  bereitgestellt.
+  
+  \item[Webseite-Monitoring]
+  Um sicherzustellen, dass die eigene Webseite erreichbar ist, lassen sich
+  Software-Agenten einsetzen, welche die Webseite im Minutentakt anfragen und
+  bei einem eventuellen Ausfall Alarm schlagen. Dieser Alarm kann sich
+  beispielsweise in Form einer E-Mail-Nachricht an den Administrator äußern.
+  
+  \item[Schutzengel]
+  Da viele bösartige Bots Links in sozialen Netzwerken teilen, überprüfen
+  einige Netzwerke die verlinkte Seite, bevor der Link publiziert wird. Der
+  Mikroblogging-Dienst Twitter geht in diesem Bereich beispielhaft voran.
+  Sämtliche auf Twitter publizierten Links werden vom hauseigenen
+  URL-Kürzungsdienst \emph{t.co} verpackt.\footcite{twitterShortLink}
+\end{description}
+
+\subsubsection{Bösartige Bots}
+\label{ssub:boesartige-bots}
+
+\begin{description}
+  \item[Bösartige Webcrawler]
+  Konträr zu \emph{freundlichen} Webcrawlern, wie Search Bots, durchsuchen
+  bösartige Webcrawler das Web nach persönlichen Daten, angreifbaren
+  Anmelde-Seiten oder ungeschützten Formularen. In einer ironischen Wende
+  begutachten diese Bots ebenfalls die \texttt{robots.txt}-Datei, um eben jene
+  Bereiche ausfindig zu machen, welche vom Administrator als Tabus markiert
+  wurden.
+  
+  \item[Spam-Bots]
+  Diese Bots versenden Spam an Adressen, die Webcrawler aufgetrieben haben.
+  Dabei muss es sich nicht zwangsweise um E-Mail-Spam handeln; auch
+  Kommentarsysteme, Online-Foren, soziale Netzwerke\footcite{facebookSpamBiz}
+  und Instant-Messaging-Dienste wie WhatsApp\footcite{whatsappSpamSperre} sind
+  betroffen.
+  
+  \item[Statistiken-Verfälschung]
+  Mit der Kommerzialisierung des Internets wurden Statistiken immer wichtiger.
+  Werbetreibende zahlen pro Ad Impression,\footcite{wp:adImpression} also pro
+  Aufruf. Botnets, also Zusammenschlüsse vieler Bots, können genutzt werden,
+  zusätzlichen Verkehr auf diese Werbeanzeigen zu
+  leiten.\footcite{fakeTrafficPayday} Da Bots oft weniger kosten als die
+  Werbeanzeigen einbringen,\footcite{fakeTrafficPayday} wird diese Praxis nicht
+  selten auch in der Realität umgesetzt.
+  
+  \item[Rating-Bots]
+  Eine weitere Folge des steigenden Konsums im Internet ist die Wichtigkeit von
+  positiven Bewertungen. Seien es Güter oder Dienstleistungen, die online
+  angeboten werden: eine bedeutende Anzahl an 5-von-5-Sterne-Bewertungen
+  verwandelt potenzielle in zahlende Kunden wie kaum ein anderes
+  Gütesigel.\footcite{consumersInfluencedReviews}
+  
+  \item[DDoS-Bots]
+  Die Überlastung eines oder mehrerer Server durch ein Botnetz wird als
+  \emph{Distributed Denial of Service}, kurz DDoS, bezeichnet. Die
+  Software-Agenten, die für die Überlastung der Server-Infrastruktur
+  verantwortlich sind, müssen dabei nicht zwangsweise auf den Rechnern der
+  Angreifer laufen. Nicht selten werden diese Bots in Form von Schadware auf
+  persönlichen Computern installiert und beteiligen sich an den Angriffen ohne
+  die Kenntnisnahme des Besitzers.
+\end{description}
