@@ -1,0 +1,80 @@
+\subsection{Auswertung der WWWEB-Daten}
+\label{sub:auswertung-der-wwweb-daten}
+
+Am 4. Juli 2016 sammelte WWWEB Daten von 2190 verschiedenen Internet-Domänen
+über die Zeitspanne von 18:43:25 Uhr bis um 21:43:19 Uhr. Das entspricht zwölf
+Domänen pro Minute. Als Startdomäne wurde \texttt{addpixel.net} gewählt. WWWEB
+navigierte mit dem Standard User-Agent von \texttt{axios/0.12.0}.
+
+Aus den dabei gescannten robots.txt-Dateien können verschiedenste Informationen
+gewonnen werden.\footnote{Der vollständige Bericht findet sich unter
+\url{https://github.com/SoftwareAgenten/GA-Archive/blob/master/WWWEB/wwweb-repor
+t_2016-06-04_18-43-25.json}} Zur Analyse des Berichts wurde die
+\emph{GA-Analyzer} Software\footnote{Projekt-Webseite:
+\url{https://github.com/SoftwareAgenten/GA-Analyzer}} eingesetzt, da sie sich
+in eine interaktive Node.js Umgebung laden lässt und dort dedizierte Funktionen
+für das Untersuchen von JSON-Strukturen bereitstellt.
+
+\subsubsection{Nicht zugelassene Verzeichnisse}
+\label{ssub:nicht-zugelassene-verzeichnisse}
+
+\begin{tabular}{ l|r }
+  \textbf{Pfad} & \textbf{Anzahl}\\
+  \hline
+  \texttt{/wp-admin/} & 462\\
+                      & 201\\
+  \texttt{/search/}   & 256\\
+  \texttt{/admin/}    & 189\\
+  \texttt{/includes/} & 188\\
+  \texttt{/modules/}  & 163\\
+  \texttt{/scripts/}  & 158\\
+  \texttt{/wp-admin/} & 158\\
+  \texttt{/search/}   & 462\\
+\end{tabular}
+
+\emph{Die acht am häufigsten verbotenen Pfade und deren Anzahl}
+
+In TK\{Tabelle \#\} zeigt sich unter anderem die Dominanz von WordPress
+gegenüber anderen Content-Management-Systemen; der Pfad \texttt{wp-admin}
+beschreibt die Lage der Administratoren-Oberfläche von WordPress. Auf Platz
+eins und drei finden sich zwei gleichgültige Ausdrücke, beide verbieten einem
+User-Agenten sämtliche Unterverzeichnisse sowie das Wurzelverzeichnis
+anzufragen. Auf Platz vier findet sich ein typischer Pfad zu einer Suchseite.
+Dieser wird oft von Software-Agenten verborgen, um eine bessere Platzierung bei
+Suchmaschinen zu erreichen.\footnote{TK
+\url{https://www.mattcutts.com/blog/search-results-in-search-results/}
+2016-06-05}
+
+\texttt{includes}, \texttt{modules} und \texttt{scripts} hingegen sind typische
+Verzeichnisse, in welchen Bausteine einer Webseite platziert werden. Diese
+Bausteine alleine bieten weder Bots noch Menschen einen Mehrwert und werden
+daher als verboten markiert. Die vollständige Liste aller von WWWEB indexierten
+Verzeichnisse findet sich im WWWEB-Archiv.\footnote{Zu finden unter:
+\url{https://github.com/SoftwareAgenten/GA-Archive/tree/master/WWWEB}}
+
+\subsubsection{User-Agents}
+\label{ssub:user-agents}
+
+\begin{tabular}{ l|r }
+  \textbf{User-Agent} & \textbf{Anzahl}\\
+  \hline
+  *         & 2501\\
+  Googlebot & 124\\
+  Slurb     & 110\\
+  008       & 109\\
+  AhrefsBot & 83\\
+\end{tabular}
+
+\emph{Die vier meist gelisteten User-Agenten und deren Anzahl}
+
+TK\{Tabelle \#\} zeigt, dass der am häufigsten gelistete User-Agent *
+(Asterisk) ist. Dieser Asterisk wird als \emph{Wildcard} bezeichnet und steht
+dabei für sämtliche User-Agenten. Auf den Plätzen zwei und drei finden sich
+\emph{Googlebot} und \emph{Slurb}, zwei Webspider{[}TK REF SPIDER{]} die
+jeweils der Google-Suche und der Yahoo!-Suche zugehörig sind. \emph{008} ist
+der User-Agent des \emph{80legs}-Webcrawlers, welcher als kommerzielle
+Dienstleistung angeboten wird. \emph{AhrefBot} scannt das Web nach Backlinks
+und anderen Informationen und stellt diese Daten in Form einer kommerzielle
+Dienstleistung bereit. Die vollständige Tabelle aller User-Agenten und deren
+Anzahl findet sich ebenfalls im WWWEB-Archiv.\footnote{Zu finden unter:
+\url{https://github.com/SoftwareAgenten/GA-Archive/tree/master/WWWEB}}
