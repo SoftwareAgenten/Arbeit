@@ -23,4 +23,227 @@ bis heute als Symbol für einen unerwünschten Überschuss fungiert.
 Mit dem Begriff \emph{Spam} werden heutzutage diverse Arten von Nachrichten
 bezeichnet. Werbenachrichten sind das klassische Beispiel einer Spam-Nachricht.
 Sie bieten zumeist dubiose Produkte oder Dienstleistungen an.
-% subsection spam (end)
+
+\subsubsection{E-Mail-Spam vermeiden}
+\label{ssub:e-mail-spam-vermeiden}
+
+Das Problem Werbung und andere unerwünschte Nachrichten zu erhalten, ist
+nicht neu; Papier-Post belästigt Hausbesitzer seit Generationen.
+Gegenmaßnahmen wie ›Bitte keine Werbung einwerfen‹-Kleber für das
+Postfach sind etablierte Präventivmaßnahmen, die in einigen Staaten
+gesetzlich verankert sind.{[}\^{}TK
+\url{http://www.focus.de/finanzen/news/postwurfsendungen-unerwuenschte-reklame-im-briefkasten-ist-illegal_aid_699771.html}
+2016-05-26{]} Digitale Spam-Nachrichten dagegen sind ein relativ neues
+Phänomen und viele E-Mail-Nutzer fühlen sich durch eine Flut von
+Spam-Nachrichten überlastet. Die folgenden Ratschläge empfehlen sich, um
+E-Mail-Postfächer vor Spam zu schützen.
+
+\paragraph{Spam-Filter}
+\label{par:spam-filter}
+
+Spam-Filter identifizieren und markieren Spam-Mails. Sie können direkt
+auf einem Mail-Server oder in einem E-Mail-Client installiert werden.
+Als Spam markierte Mails werden dabei in ein eigenes Postfach bewegt;
+sollten wichtige E-Mails nicht im Posteingang erscheinen, kann man das
+Spam-Postfach auf die erwarteten Nachrichten untersuchen. Viele
+E-Mail-Clients erlauben das manuelle Markieren von Spam-Mails, sollte
+eine E-Mail den Spam-Filter überlisten. Diese Aktion ist dem einfachen
+Löschen der Nachricht insofern überlegen, als dass der Client die
+markierte E-Mail auf Spam-Indikatoren hin untersucht um diese in seinen
+Spam-Filter-Algorithmus zu integrieren.
+
+\paragraph{Bilder unterbinden}
+\label{par:bilder-unterbinden}
+
+Eine drastische, wenn auch effiziente Maßnahme ist das vollständige
+Blockieren aller Bilder. Dadurch, dass Bilder erst beim Darstellen einer
+E-Mail geladen werden, können Spammer herausfinden, ob eine
+E-Mail-Adresse in aktiver Benutzung ist oder nicht -- sprich, ob es sich
+lohnt weite Spam-Nachrichten zu senden. Damit diese Maßnahme nicht alle
+E-Mails betrifft, verfügen viele E-Mail-Clients über eine
+Favoriten-/VIP-Kontakte-Liste, welche die Darstellung von Bildern bei
+ausgezeichneten Absendern erlaubt. Alternativ bieten einige Clients
+einen Vorschau-Modus an, der E-Mails ohne Bilder oder andere Anhänge
+darstellt.
+
+\paragraph{E-Mail-Adresse privat halten}
+\label{par:e-mail-adresse-privat-halten}
+
+Spam-Bots können keinen Spam an Adressen senden, die sie nicht kennen.
+Für ein öffentliches Auftreten im Internet, insbesondere im Web,
+empfiehlt es sich daher eine zweite, öffentliche E-Mail-Adresse zu
+nutzen. Diese sollte immer dann verwendet werden, wenn die Adresse
+öffentlich auf einer Webseite oder in einer App aufscheint. Da
+E-Mail-Adressen ein einfaches Muster aufweisen, können sie gut von
+Software-Agenten aufgestöbert werden. Nach diesem System besitzt man
+eine private E-Mail-Adresse für Familie, Freunde und Arbeit und eine
+öffentliche Adresse für den Rest der Welt. Da wichtige Nachrichten mit
+höherer Wahrscheinlichkeit bei der privaten Adresse eingehen, kann der
+Spam-Filter für die öffentliche Adresse aggressiver eingestellt werden.
+In Kapitel {[}TK 4.1.3{]} wird außerdem beschrieben, wie öffentliche
+E-Mail-Adressen besser vor Bots beschützt werden können.
+
+\paragraph{Keine Interaktionen}
+\label{par:keine-interaktionen}
+
+E-Mails, die als Spam markiert wurden oder von fremden Absendern
+versendet wurden, sollten mit Obacht behandelt werden. Antwortet man auf
+eine Spam-Nachricht, erfährt der Spammer, dass die E-Mail-Adresse aktiv
+ist. Öffnet man einen Anhang, könnte sich darin Schadsoftware befinden.
+Das Klicken auf einen Link kann zu einem der beiden vorherigen Szenarien
+führen. Nachrichten, die auf eine dieser Aktionen drängen, sollten
+verworfen werden.
+
+\subparagraph{Beispiele}
+\label{spar:beispiele}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Ihr Account steht kurz vor der Löschung, klicken Sie hier um
+  dies zu verhindern.}
+\item
+  \emph{Sie haben neulich eine Überweisung von 300 Euro vorgenommen,
+  klicken Sie hier um dies rückgängig zu machen.}
+\item
+  \emph{Wie gewünscht finden sie anbei das Dokument über unser
+  Gespräch.}
+\end{itemize}
+
+\subsubsection{E-Mail-Adressen Verschleierung}
+\label{ssub:e-mail-adressen-verschleierung}
+
+Manchmal müssen E-Mail-Adressen auf Webseiten aufscheinen. Sei es auf
+der Kontakt-Seite, in den Lizenzvereinbarungen oder im Impressum. Über
+die Jahre haben sich verschiedenste Techniken entwickelt,
+E-Mail-Adressen auf Webseiten zu verschleiern. Im Folgenden werden drei
+Methoden beschrieben, die E-Mail-Adressen für Menschen lesbar und für
+Software-Agenten unlesbar machen.
+
+\paragraph{Interpunktion verschleiern}
+\label{par:interpunktion-verschleiern}
+
+Das Umschreiben einer Adresse vom Format ›name@example.org‹ in das
+Format ›name {[}at{]} example {[}dot{]} org‹ verändert das Muster, nach
+dem Software-Agenten suchen. Zusätzlich lassen sich viele weitere
+Variationen desselben Tricks erdenken: ›name-AT-example-DOT-org‹. Obwohl
+es für Bots nicht unmöglich ist diese Verschleierung zu durchschauen,
+ist sie immer noch weitaus besser, als die E-Mail-Adresse ohne
+Verschleierung zu veröffentlichen.{[}\^{}TK
+\url{http://techblog.tilllate.com/2008/07/20/ten-methods-to-obfuscate-e-mail-addresses-compared/}
+2016-05-20{]}
+
+\paragraph{CSS/JavaScipt}
+\label{par:cssjavascipt}
+
+Beinahe alle Bots lesen lediglich HTML-Dokumente und ignorieren dabei
+externe Ressourcen wie CSS und JavaScript.{[}\^{}TK
+\url{http://www.labnol.org/internet/hide-email-address-web-pages/28364/}
+2016-05-26{]} Der zusätzliche Aufwand, diese externen Ressourcen
+anzufragen, das HTML-Dokument in ein logisches Modell (DOM) umzuwandeln
+und folglich den CSS- und JavaScript-Code auf dieses Modell anzuwenden,
+ist verhältnismäßig groß und raubt Zeit, die für die Suche anderer
+Adressen genutzt werden könnte. Ein mit CSS verstecktes HTML Element,
+das inmitten einer E-Mail-Adresse platziert wird, ist eine nahezu
+perfekte Verschleierungs-Technik.{[}\^{}TK
+\url{http://techblog.tilllate.com/2008/07/20/ten-methods-to-obfuscate-e-mail-addresses-compared/}
+2016-05-20{]}
+
+\texttt{html\ \textless{}style\textgreater{}\ {[}data-block\textasciitilde{}=bots{]}\ \{\ display:\ none\ \}\ \textless{}/style\textgreater{}\ \textless{}p\textgreater{}name@\textless{}span\ data-block="bots"\textgreater{}nil\textless{}/span\textgreater{}example.org\textless{}/p\textgreater{}}
+
+Mit JavaScript lassen sich E-Mail-Adressen durch eine Codierung oder
+Verschlüsslung vor Bots verbergen. Diese Methoden bieten einen für Bots
+praktisch unknackbaren Schutz. Während CSS bei so gut wie 100\% aller
+menschlichen Benutzer aktiviert ist,{[}\^{}CSS ist für die Gestaltung
+von Webseiten zuständig und bietet daher nicht eine Vielzahl an
+Sicherheitslücken, für welche einige Netzer JavaScript deaktivieren. Die
+Anzahl an Webseiten-Benutzern, welche CSS deaktiviert haben, ist derart
+gering, dass sich zu diesem Thema keine fundierte Statistiken finden
+lasse.{]} ist JavaScript nur bei 98\% aktiviert.{[}\^{}TK
+\url{https://developer.yahoo.com/blogs/ydn/many-users-javascript-disabled-14121.html}
+2016-05-21{]} JavaScript basierte Verschleierungen grenzen damit 2\%
+aller Benutzer aus, erlauben jedoch eine beliebige Verschlüsslung der
+Adresse, darunter zum Beispiel ROT13.{[}\^{}TK Christopher Swenson,
+Modern Cryptanalysis: Techniques for Advanced Code Breaking. John Wiley
+\& Sons. S. 5, ISBN 9780470135938{]}
+
+\paragraph{HTML-Codierung}
+\label{par:html-codierung}
+
+HTML unterstützt selbst eine Reihe von Codierungen,{[}\^{}Ein Generator
+für codierte E-Mail-Adressen findet sich unter
+\url{http://rumkin.com/tools/mailto_encoder/custom.php}{]} die auf
+E-Mail-Adressen angewandt werden kann.
+
+\subparagraph{URL-Codierung}
+\label{spar:url-codierung}
+
+Bei einer URL Codierung werden einzelne Zeichen durch ein Prozentzeichen
+gefolgt von zwei alphanumerischen Zeichen ersetzt. Die Kombination der
+beiden alphanumerischen Zeichen lässt sich in standardisierten Tabellen
+nachschlagen.{[}\^{}TK \url{https://tools.ietf.org/html/rfc3986}
+2016-06-05{]}
+
+\texttt{html\ \textless{}a\ href="mailto:\%6e\%61\%6d\%65\%40\%65\%78\%61\%6d\%70\%6c\%65\%2e\%6f\%72\%67"\textgreater{}name@example.org\textless{}/a\textgreater{}}
+
+\subparagraph{HTML-Entitäten-Referenzen}
+\label{spar:html-entitaeten-referenzen}
+
+Eine Zeichen-Entität-Referenz beschreibt ein Zeichen, indem der
+Code-Point link von \texttt{\&\#} oder \texttt{\&\#x} und rechts von
+\texttt{;} umgeben sein muss. Der Code-Point beschreibt die numerische
+Position, an welcher das Zeichen im Unicode-Standard geführt wird.
+Beginnt die Entitäten-Referenzen mit \texttt{\&\#x}, muss der Code-Point
+in Hexadezimalzahlen, anstelle von Dezimalzahlen, angegeben werden.
+
+\texttt{html\ \textless{}a\ href="mailto:\&\#110;\&\#97;\&\#109;\&\#101;\&\#64;\&\#101;\&\#120;\&\#97;\&\#109;\&\#112;\&\#108;\&\#101;\&\#46;\&\#111;\&\#114;\&\#103;"\textgreater{}name@example.org\textless{}/a\textgreater{}}
+
+\subparagraph{URL-Codierung + HTML-Entitäten-Referenzen}
+\label{spar:url-codierung-html-entitaeten-referenzen}
+
+\texttt{html\ \textless{}a\ href="mailto:\%6e\%61\&\#109;\&\#101;\&\#64;\&\#101;\&\#120;\&\#97;\&\#109;\%70\%6c\&\#101;\%2e\&\#111;\%72\&\#103;"\textgreater{}name@example.org\textless{}/a\textgreater{}}
+
+\subsubsection{Kommentare}
+\label{ssub:kommentare}
+
+Neben E-Mails stellen online-Kommentare ein weiteres Medium für
+Spam-Nachrichten dar. Um Kommentare vor Bots zu schützen, lassen sich
+verschiedene Techniken zum Einsatz bringen. Dazu zählen CAPTCHAs,{[}TK
+REF 4.3.2{]} Honeypots,{[}TK REF 4.3.3{]} die Pflicht, sich beim
+Kommentarsystem anzumelden und Zwei-Schritt-Absenden-Verfahren.
+
+Im Folgenden wird eine Spam-Attacke beschrieben, die auf ein
+Kommentarsystem vom 6. Mai 2015 (20:57 Uhr) bis zum 7. Mai 2015 (06:21
+Uhr) durchgeführt wurde. Das Kommentarsystem befand sich unter der
+Adresse
+\texttt{*.blogfill.de/weblog/funktionsweise-von-easing-funktionen} und
+setzte als einzige Anti-Spam-Technik eine Kommentarvorschau ein, die vor
+dem Absenden eines Kommentars durchgeführt werden musste. Das alleine
+bot bereits einen guten Schutz gegen Spam,{[}\^{}TK
+\url{http://textpattern.com/faq/82/how-do-i-skip-the-comment-preview}
+2016-05-28{]}{[}\^{}TK \url{https://vimeo.com/5397743} 2016-05-28{]}
+verhinderte jedoch nicht, dass im genannten Zeitraum 719 Spam-Kommentare
+eingereicht wurden.
+
+Bei den 719 Kommentaren wurde der Name „Walter“ siebenmal und damit am
+häufigsten gewählt. Es wurden insgesamt 71 Links publiziert, dabei
+handelt es sich um 35 voneinander unterschiedliche Exemplare. Die drei
+häufigsten Links wurden jeweils viermal publiziert, einer davon
+verwendete HTTPS im Gegensatz zu HTTP. Aus den 35 unterschiedlichen
+Links verwendeten nur zwei HTTPS, beide mit demselben Hostname:
+\texttt{ummgc.org}. Die Verwendung von HTTPS ist insofern interessant,
+als dass HTTPS ein Zertifikat verlangt, welches von einer zumeist
+externen Zertifizierungsstelle{[}\^{}Sind Zertifikate extern?{]}
+ausgestellt werden muss. Spammer können so leicht rückverfolgt werden.
+
+Auch interessant ist es, dass von insgesamt 376.165 Zeichen 0,053~\%
+Steuerzeichen sind, also nicht normale Zeichen, die am Bildschirm
+dargestellt werden, sondern die Darstellung anderer Zeichen
+beeinflussen. Solche seltene Zeichen könnten eingesetzt werden um in
+primitiven Systeme, die nicht mit solcherlei Zeichen rechnen, einen
+Fehler zu verursachen. 0,27~\% aller Zeichen machen Währungszeichen aus,
+davon 914 Euro-, 91 Dollar- und 22 Pfund-Zeichen.
+
+Ein vollständiger Report aller Daten und eine Beschreibung, wie sie
+gewonnen wurden, findet sich online unter
+\url{https://github.com/SoftwareAgenten/GA-Archive/tree/master/Comments}.
