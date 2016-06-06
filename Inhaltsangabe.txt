@@ -35,9 +35,9 @@ P   1.2  Aufbau
 ✓     5.2.2  Konfiguration
 ✓     5.2.3  Verhalten
 ✓     5.2.4  Einsatz
-    5.3  Auswertung der Great-Attractor-Daten
-      5.3.1  Aufbau des Honeypot
-      5.3.2  Login-Versuche
+P   5.3  Auswertung der Great-Attractor-Daten
+P     5.3.1  Aufbau des Honeypot
+P     5.3.2  Login-Versuche
 ✓ 6  Eigener Software-Agent
 ✓   6.1  WWWEB
 ✓     6.1.1  Überblick
