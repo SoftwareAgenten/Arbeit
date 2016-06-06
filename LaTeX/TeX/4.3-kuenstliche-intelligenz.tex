@@ -1,34 +1,35 @@
-\subsection{Künstliche Intelligenz} % (fold)
+\subsection{Künstliche Intelligenz}
 \label{sub:kunstliche_intelligenz}
+
 Die ersten Software-Bots waren noch weit entfernt vom selbstständigen Verhalten
-der heutigen Software-Agenten. Sie wurden programmiert um eine einzige Aufgabe
-zu erledigen.\footcite{wa:spamFilter} Spam-Emails an eine
-vordefinierte Liste von Empfängern zu senden, zum Beispiel. Diese
-Verfahrensweise skaliert nicht in die Dimensionen, die das Internet inzwischen
-angenommen hat. Zusammen mit dem Internet sind Computer immer schneller,
-komplexer und leistungsfähiger geworden. So lassen sich heute autonome
-Anwendungen realisieren, die selbst auf der Suche nach E-Mail-Adressen das WWW
+der heutigen Software-Agenten. Jeder Bot wurde für eine einzige Aufgabe
+programmiert,\footcite{wa:spamFilter} beispielsweise Spam-Emails an eine
+vordefinierte Liste von Empfängern zu senden. Diese Verfahrensweise skaliert
+nicht in die Dimensionen, die das Internet inzwischen angenommen hat.
+Gleichzeitig mit dem Internet sind Computer immer schneller, komplexer und
+leistungsfähiger geworden. So lassen sich heute autonome Anwendungen
+realisieren, die selbst auf der Suche nach E-Mail-Adressen das WWW
 durchstöbern, zur Situation passende Texte verfassen, diese versenden und auf
 Antworten warten.
 
-Das Motto eines voll-autonomen Software-Agenten ist es, den Menschlichen Faktor
+Das Motto eines voll-autonomen Software-Agenten ist es, den menschlichen Faktor
 bei der Beschaffung von Daten zu eliminieren. Wie oben beschrieben sind Bots
 besonders dazu geeignet Listen von Daten anzulegen und diese abzuarbeiten.
 Manchmal wird das von Benutzern des Internets geduldet -- wie bei der
 Indexierung von öffentlichen Webseiten -- und manchmal nicht -- wie bei der
 Aufspürung von privaten Daten.
 
-Um Bots von gewissen Orten im Internet auszusperren wurden verschiedene
+Um Bots von gewissen Orten im Internet auszusperren, wurden verschiedene
 Techniken entwickelt, darunter CAPTCHAs, Honeypots, und der Zwang zur
 Beglaubigung als Mensch. Die ersten beiden Techniken werden in diesem Kapitel
-noch genauer behandelt. Beim Zwang zur Beglaubigung als Mensch handelt es sich
-um das Vorweisen von persönlichen Daten, die den Benutzer als Menschen
-authentifizieren. Dazu zählen:
+noch genauer behandelt.{[}TK REF CATCHA{]}{[}TK REF Honeypot{]} Beim Zwang zur
+Beglaubigung als Mensch handelt es sich um das Vorweisen von persönlichen
+Daten, die den Benutzer als Menschen authentifizieren. Dazu zählen:
 
 \begin{itemize}
 \item
   Ein Nachrichten-Dienst, der seine Nachrichten über das Internet versendet,
-  demgegenüber die Handynummer bei der Registrierung eines neuen Accounts
+  aber dennoch die Handynummer bei der Registrierung eines neuen Accounts
   verlangt. Die Handynummer dient in diesem Beispiel als rares Gut, das ein Bot
   nicht beliebig beschaffen kann.
 \item
@@ -39,28 +40,28 @@ authentifizieren. Dazu zählen:
   digitale Kopie des Personalausweises verlangt.
 \end{itemize}
 
-\subsubsection{CAPTCHA} % (fold)
+\subsubsection{CAPTCHA}
 \label{ssub:captcha}
+
 Eine aktive Software-Bot Blockade wird als CAPTCHA (für \emph{Completely
-Automated Public Turing Test To Tell Computers and Humans Apart},
-\footcite{captchaNet} zu Deutsch: \emph{Vollständig automatisierter,
+Automated Public Turing Test To Tell Computers and Humans
+Apart}\footcite{captchaNet}, zu Deutsch: \emph{Vollständig automatisierter,
 öffentlicher Turing-Test zur Unterscheidung von Computern und Menschen})
 bezeichnet. Exemplarische Einsatzgebiete sind die Reduzierung von
-Spam-Nachrichten durch ein online Kontaktformular und der Ausschluss von Bots
+Spam-Nachrichten durch ein Online-Kontaktformular und der Ausschluss von Bots
 bezüglich der Registrierung bei einem sozialen Netzwerk.
 
-Verbreitete Ausführungen der CAPTCHA-Methode, welche für diese Arbeit von
-Wichtigkeit sind, umfassen:
+Verbreitete Ausführungen der CAPTCHA-Methode umfassen:
 
 \begin{description}
   \item[Verzerrter Text]
   Der Benutzer muss eine verzerrte Abbildung einer Zeichenfolge in ein Textfeld
-  eingeben. Die Verzerrung ist stark genug, als dass sie im Idealfall nicht von
+  eingeben. Die Verzerrung ist stark genug, so dass sie im Idealfall nicht von
   Software ausgemacht werden kann und dabei dennoch für Menschen lesbar bleibt.
   
-  \item[Objekt Klassifikation]
+  \item[Objekt-Klassifikation]
   Dem Benutzer wird eine Gruppe von Bildern präsentiert, von welchen jene
-  markiert werden müssen, welche zu einer bereitgestellten Beschreibung passen.
+  markiert werden müssen, die zu einer bereitgestellten Beschreibung passen.
   
   \item[Akustisches Diktat]
   Verschiedene Stimmen diktieren dem Benutzer einen alphanumerischen Code der
@@ -68,13 +69,12 @@ Wichtigkeit sind, umfassen:
   Ausführungen der CAPTCHA-Methode um Rücksicht auf visuell eingeschränkte
   Benutzer zu nehmen.
 \end{description}
-% subsubsection captcha (end)
 
-\subsubsection{Honeypot} % (fold)
+\subsubsection{Honeypot}
 \label{ssub:honeypot}
-Als Honeypot (zu Deutsch \emph{Honigtopf}, sinngemäß \emph{Fettnäpfchen}) wird
-in der Informatik eine Falle bezeichnet, die sich als begehrenswertes Objekt
-tarnt.
+
+Als Honeypot (zu Deutsch \emph{Honigtopf}) wird in der Informatik eine Falle
+bezeichnet, die sich als begehrenswertes Objekt tarnt.
 
 Ein exemplarischer Einsatz ist das von Ordnungshütern durchgeführte
 Veröffentlichen von scheinbar illegalen Dateien im Internet. Nutzer, welche auf
@@ -82,13 +82,34 @@ diese Dateien zugreifen, werden vom Honeypot registriert und können daraufhin
 strafrechtlich verfolgt werden.
 
 Dieselbe Methodik lässt sich bei der Unterscheidung zwischen Bots und Menschen
-zum Einsatz bringen. Eine geläufige Praxis ist es, online Formulare (zum
+zum Einsatz bringen. Eine geläufige Praxis ist es, Onlineformulare (zum
 Beispiel ein Kommentar-Formular) mit einem zusätzlichen Textfeld zu bestücken
 und dieses visuell zu verbergen. Ein menschlicher Benutzer kann dieses Feld
 weder erreichen noch wahrnehmen; konträr stoßen Software-Agenten auf das
-Textfeld – sie nehmen schließlich nur den Programmcode des Formulars und nicht
-die visuelle Aufmachung wahr – und füllen es aus. Beim Absenden des Formulars
+Textfeld -- sie nehmen schließlich nur den Programmcode des Formulars und nicht
+die visuelle Aufmachung wahr -- und füllen es aus. Beim Absenden des Formulars
 kann die Formular-Software überprüfen, ob das Honeypot-Feld ausgefüllt wurde
 oder nicht; im ersten Falle würde diese Software das Absenden unterbinden.
-% subsubsection honeypot (end)
-% subsection kunstliche_intelligenz (end)
+
+\subsubsection{Prognose}
+\label{ssub:prognose}
+
+Die Anzahl an Bots, die das Internet durchstreifen, wird auch in den nächsten
+Jahren zunehmen. Dabei wird sich die Kluft zwischen einfach gestrickten Agenten
+und Künstlicher Intelligenz immer weiter vergrößern. Einfache Bots,
+beispielsweise Beschaffer von E-Mail-Adressen, versuchen so große Teile des
+Internets so gut wie möglich zu durchsuchen. Dabei muss der Algorithmus
+performant, energiesparend und effizient sein. So werden diese Bots auch in 50
+Jahren noch auf Honeypots hereinfallen, dafür aber immer mehr Webseiten
+durchsuchen um diese Schwäche wettzumachen. Am anderen Ende des Spektrums
+finden sich Agenten, die von einer Künstlichen Intelligenz angetrieben werden.
+KI gesteuerte Bots werden immer wichtigere Aufgaben übernehmen. Dies trifft
+sowohl für gut- als auch bösartige Bots zu. Damit CAPTCHAs in einigen Jahren
+noch gegen KIs standhalten können, müssten sie derart kompliziert werden, dass
+auch die meisten Menschen nichts mehr damit anzufangen wüssten. Dieser Trend
+ist bereits heute zu beobachten und führt zum \emph{Zwang zur Beglaubigung als
+Mensch}. Immer mehr Online-Plattformen verlangen nach einer Telefonnummer um
+sich Bots vom Leibe zu halten. Anderseits wandern immer mehr persönliche Daten
+vom Web in Apps; gerade soziale Netzwerke lösen sich vom WWW zugunsten mobiler
+Applikationen.\footcite{timeOnSmartphone} Diese Fragmentierung lukrativer Daten
+macht sie für Bots schwieriger zugänglich.
