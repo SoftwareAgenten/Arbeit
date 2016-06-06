@@ -29,7 +29,7 @@ Sie bieten zumeist dubiose Produkte oder Dienstleistungen an.
 
 Das Problem Werbung und andere unerwünschte Nachrichten zu erhalten, ist nicht
 neu; Papier-Post belästigt Hausbesitzer seit Generationen. Gegenmaßnahmen wie
-„Bitte keine Werbung einwerfen“-Kleber für das Postfach sind etablierte
+\enquote{Bitte keine Werbung einwerfen}-Kleber für das Postfach sind etablierte
 Präventivmaßnahmen, die in einigen Staaten gesetzlich verankert
 sind.\footcite{someReklameIllegal} Digitale Spam-Nachrichten dagegen sind ein
 relativ neues Phänomen und viele E-Mail-Nutzer fühlen sich durch eine Flut von
@@ -114,12 +114,12 @@ E-Mail-Adressen für Menschen lesbar und für Software-Agenten unlesbar machen.
 \paragraph{Interpunktion verschleiern}
 \label{par:interpunktion-verschleiern}
 
-Das Umschreiben einer Adresse vom Format „name@example.org“ in das Format „name
-{[}at{]} example {[}dot{]} org“ verändert das Muster, nach dem Software-Agenten
-suchen. Zusätzlich lassen sich viele weitere Variationen desselben Tricks
-erdenken: „name-AT-example-DOT-org“. Obwohl es für Bots nicht unmöglich ist
-diese Verschleierung zu durchschauen, ist sie immer noch weitaus besser, als
-die E-Mail-Adresse ohne Verschleierung zu
+Das Umschreiben einer Adresse vom Format \enquote{name@example.org} in das
+Format \enquote{name {[}at{]} example {[}dot{]} org} verändert das Muster, nach
+dem Software-Agenten suchen. Zusätzlich lassen sich viele weitere Variationen
+desselben Tricks erdenken: \enquote{name-AT-example-DOT-org}. Obwohl es für
+Bots nicht unmöglich ist diese Verschleierung zu durchschauen, ist sie immer
+noch weitaus besser, als die E-Mail-Adresse ohne Verschleierung zu
 veröffentlichen.\footcite{obfuscateEmailAddresses}
 
 \paragraph{CSS/JavaScript}
@@ -171,7 +171,9 @@ alphanumerischen Zeichen lässt sich in standardisierten Tabellen
 nachschlagen.\footcite{rfc:3986}
 
 \begin{lstlisting}[language=HTML]
-<a href="mailto:%6e%61%6d%65%40%65%78%61%6d%70%6c%65%2e%6f%72%67">name@example.org</a>
+<a href="mailto:%6e%61%6d%65%40%65%78%61%6d%70%6c%65%2e%6f%72%67">
+  name@example.org
+</a>
 \end{lstlisting}
 
 \subparagraph{HTML-Entitäten-Referenzen}
@@ -184,19 +186,21 @@ im Unicode-Standard geführt wird. Beginnt die Entitäten-Referenzen mit
 \texttt{\&\#x}, muss der Code-Point in Hexadezimalzahlen, anstelle von
 Dezimalzahlen, angegeben werden.
 
-\begin{lstlisting}[language=HTML]
-<a href="mailto:&#110;&#97;&#109;&#101;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#111;&#114;&#103;">name@example.org</a>
+\begin{lstlisting}[language=HTML,escapechar=\$]
+<a href="mailto:&#110;&#97;&#109;&#101;&#64;&#101;&#120;&#97;$\ldots$">
+  name@example.org
+</a>
 \end{lstlisting}
 
 \subparagraph{URL-Codierung + HTML-Entitäten-Referenzen}
 \label{spar:url-codierung-html-entitaeten-referenzen}
 
-URL-Codierung kann auch mit HTML-Entitäten-Referenzen kombiniert werden. Das
-folgende Beispiel beschreibt eine Mischung zu jeweils 50\,\% der beiden
-Kodierungen.
+URL-Codierung kann auch mit HTML-Entitäten-Referenzen kombiniert werden.
 
-\begin{lstlisting}[language=HTML]
-<a href="mailto:%6e%61&#109;&#101;&#64;&#101;&#120;&#97;&#109;%70%6c&#101;%2e&#111;%72&#103;">name@example.org</a>
+\begin{lstlisting}[language=HTML,escapechar=\$]
+<a href="mailto:%6e%61&#109;&#101;&#64;&#101;&#120;&#97;&#109;$\ldots$">
+  name@example.org
+</a>
 \end{lstlisting}
 
 \subsubsection{Kommentare}
@@ -214,12 +218,10 @@ Das Kommentarsystem befand sich unter der Adresse
 \texttt{*.blogfill.de/weblog/funktionsweise-von-easing-funktionen} und setzte
 als einzige Anti-Spam-Technik eine Kommentarvorschau ein, die vor dem Absenden
 eines Kommentars durchgeführt werden musste. Das alleine bot bereits einen
-guten Schutz gegen
-Spam,\footcite{howSkipCommentPreview}\footcite{wordPressVsTextpattern}
-verhinderte jedoch nicht, dass im genannten Zeitraum 719 Spam-Kommentare
-eingereicht wurden.
+guten Schutz gegen Spam,\footcite{howSkipCommentPreview} verhinderte jedoch
+nicht, dass im genannten Zeitraum 719 Spam-Kommentare eingereicht wurden.
 
-Bei den 719 Kommentaren wurde der Name „Walter“ siebenmal und damit am
+Bei den 719 Kommentaren wurde der Name \enquote{Walter} siebenmal und damit am
 häufigsten gewählt. Es wurden insgesamt 71 Links publiziert, dabei handelt es
 sich um 35 voneinander unterschiedliche Exemplare. Die drei häufigsten Links
 wurden jeweils viermal publiziert, einer davon verwendete HTTPS im Gegensatz zu
