@@ -4,9 +4,9 @@ P = Pending Approval
 M = Approved Markdown
 ---
 ✓ 0  Abstract
-  1  Einleitung
-    1.1  Motivation
-    1.2  Aufbau
+P 1  Einleitung
+P   1.1  Motivation
+P   1.2  Aufbau
 ✓ 2  Überblick
 ✓   2.1  Definition
 ✓   2.2  Einsatz
