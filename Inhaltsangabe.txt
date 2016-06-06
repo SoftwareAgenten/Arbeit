@@ -29,10 +29,14 @@ P   1.2  Aufbau
 ✓     4.3.3  Honeypot
 ✓     4.3.4  Prognose
 ✓ 5  Die Software-Agenten Suite
-✓   5.1  Überblick
-✓   5.2  Aufbau
-✓   5.3  Installation
-✓   5.4  Einsatz
+✓   5.1  Great-Attractor
+✓     5.1.1  Überblick
+✓     5.1.2  Aufbau
+✓     5.1.3  Installation
+✓     5.1.4  Einsatz
+    5.2  Auswertung der Great-Attractor-Daten
+      5.2.1  Aufbau des Honeypot
+      5.2.2  Login-Versuche
 ✓ 6  Eigener Software-Agent
 ✓   6.1  WWWEB
 ✓     6.1.1  Überblick
