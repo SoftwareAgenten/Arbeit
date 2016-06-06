@@ -13,8 +13,8 @@ M = Approved Markdown
 ✓     2.2.1  Gutartige Bots
 ✓     2.2.2  Bösartige Bots
   3  Forschung
-    3.1  Rahmenbedingungen
-    3.2  Methoden
+    3.1  Methoden
+    3.2  Rahmenbedingungen
 M 4  Beobachten & Verstehen
 M   4.1  Spam
 ✓     4.1.1  Definition
