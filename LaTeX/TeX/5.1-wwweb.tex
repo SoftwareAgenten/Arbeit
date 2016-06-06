@@ -1,0 +1,104 @@
+\subsection{WWWEB}
+\label{sub:wwweb}
+
+Dieses Kapitel beschreibt anhand eines konkreten Beispiels, wie ein
+Software-Agent aufgebaut ist und wie er funktioniert. Eigens für diese Arbeit
+wurde ein Webcrawler namens WWWEB\footnote{Der Quellcode für WWWEB findet
+sich unter \url{https://github.com/SoftwareAgenten/WWWEB}} (kurz für
+\emph{World Wide Web Exploring Bot}, englisch für \emph{Weltweites Netz
+erkundender Roboter}) programmiert. WWWEB startet an einer vordefinierten
+Domäne, zum Beispiel bei \texttt{example.org} und durchsucht die dazugehörige
+Webseite auf Port 80 nach allen Links, die auf andere Domänen zeigen,
+beispielsweise \texttt{other.org} und \texttt{another-one.org}. Wurden diese
+Domänen gefunden, macht WWWEB eine Anfrage an
+\texttt{http://example.org/robots.txt}. (Siehe \ref{robotstxt}.) Diese Datei wird
+folglich analysiert und in einem abstrakten Datenmodell festgehalten.
+
+Damit hat WWWEB \texttt{example.org} abgearbeitet. Die Domäne wird in eine
+Liste eingetragen, um nicht erneut analysiert zu werden. Im Folgenden
+durchläuft WWEB dieselbe Prozedur auf einer der zuvor gefundenen Domänen. Da
+die meisten Startseiten zu mehr als einer anderen Domäne verlinken, füllt sich
+die Liste schneller an, als sie entleert wird.
+
+Periodisch werden Berichte im JSON-Dateiformat angelegt, um beim Beenden des
+WWWEB Programmes möglichst wenige Daten zu verlieren. Ursachen für ein solches
+Beenden können sein:
+
+\begin{itemize}
+\item
+  WWWEB wurde vom Betriebssystem beendet, um Ressourcen frei zu machen.
+\item
+  Der Host, auf welchem WWWEB läuft, hat eine begrenzte Laufzeit für
+  \emph{Node.js}-Prozesse\footnote{WWWEB wurde für die Software-Plattform
+  \emph{Node.js} programmiert.} festgelegt.
+\item
+  Der Computer wurde von der Stromversorgung getrennt.
+\end{itemize}
+
+\subsubsection{Architektur}
+\label{ssub:wwweb_architektur}
+
+Das Programm läuft großteils in einer Haupt-Routine, die kontinuierlich von der
+\texttt{crawl}-Funktion aufgerufen wird. \texttt{crawl} verwaltet einen
+Stapelspeicher (\emph{Stack}), auf welchen gefundene Domänen gelegt und auch
+wieder heruntergenommen werden können. Die Domänen werden deshalb nach dem
+\emph{Last Come, First Served} (\emph{zuletzt herein -- zuerst hinaus}) Prinzip
+behandelt. Die Summe aller untersuchen Domänen wird als Bericht (\emph{Report})
+bezeichnet.
+
+Ein Bericht besteht aus einer Startzeit, der Startdomäne und einem Protokoll.
+Ein Protokoll wiederum besteht aus einer Reihe von Aufzeichnungen
+(\emph{Records}). Diese Aufzeichnungen setzen sich aus einem Zeitpunkt und
+einer Domäne-Konfiguration (\emph{DomainSetting}) zusammen, welche eine Domäne
+mit einem Satz an Regeln (\emph{RuleSet}) verknüpfen. Ein \emph{RuleSet}
+beschreibt den Zusammenhang eines User-Agents und den dafür definierten Regeln
+(\emph{Rules}).
+
+WWWEBs Netzwerkanfragen setzen auf \emph{Promises} auf, eine Technik, bei
+welcher ein Teil des Programms ein Versprechen äußert, gewisse Daten
+bereitzustellen. So lässt sich ein asynchroner Programmierstil mit iterativen
+Charakteristiken umsetzen.
+
+Der Speichervorgang, welcher den aktuellen Bericht in einen JSON-String
+umwandelt und in das Dateisystem schreibt, wird periodisch von der
+Event-Schleife der \emph{Node.js}-Umgebung aufgerufen und ist damit unabhängig
+vom Kontrollfluss des restlichen Programms.
+
+\subsubsection{Installation}
+\label{ssub:wwweb_installation}
+
+WWWEB setzt die \emph{Node.js}-Umgebung in der Version 6.0.0 oder höher voraus
+und lässt sich über den Package-Manager \emph{npm} installieren.\footnote{Die
+Projektseite für das npm-Packet findet sich unter
+\url{https://www.npmjs.com/package/wwweb}} Sowohl \emph{Node.js} als auch
+\emph{npm} sind für Windows, OS~X und Linux verfügbar.
+
+Sind \emph{Node.js} und \emph{npm}, jeweils in der erforderten Version,
+vorhanden, so genügt der folgende Befehl, um WWWEB auf einem Computer zu
+installieren.
+
+\begin{lstlisting}[language=shell]
+$ npm install -g wwweb
+\end{lstlisting}
+
+\subsubsection{Einsatz}
+\label{ssub:wwweb_einsatz}
+
+Bei WWWEB handelt es sich um ein Kommandozeilen-Tool. Es verlangt zwei
+Parameter: die Startdomäne und das Ausgabeverzeichnis, in welches die Berichte
+geschrieben werden. Weitere Parameter können mit \texttt{wwweb\ -\/-help}
+eingesehen werden.
+
+Der folgende Befehl startet WWWEB bei \texttt{example.org}, schreibt alle zwei
+Minuten einen Bericht in das Verzeichnis \texttt{\textasciitilde{}/reports} und
+wartet höchstens neun Sekunden auf das Laden von Dateien.
+
+\begin{lstlisting}[language=shell]
+$ wwweb -d example.org -s 120 -o ~/reports --timeout 9000
+\end{lstlisting}
+
+Für einen besseren Einblick in die Funktionsweise des Programms bietet WWWEB
+einen zweistufigen Verbose-Modus\footcite{wp:verbose} an. Mit \texttt{-v}
+werden Warnmitteilungen und unwichtige Informationen ausgegeben. Ist der
+Parameter doppelt vorhanden (\texttt{-vv}) werden ebenfalls
+Debugging-Informationen ausgegeben.

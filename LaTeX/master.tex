@@ -1,40 +1,73 @@
 % Software-Agenten im Internet
-% Copyright Florian Pircher <http://addpixel.net/>
+% Copyright Florian Pircher <https://addpixel.net/>
 
 \RequirePackage[l2tabu,orthodox]{nag} % enforce best practices
 
-\documentclass[twocolumn]{article}
+\documentclass{article}
 
 % Layout
 \usepackage[a4paper]{geometry}
 \usepackage{booktabs} % nicer tables
 \usepackage[hang,flushmargin]{footmisc} % don't indent all the things
 % Text
+\usepackage[T1]{fontenc} % <http://tex.stackexchange.com/a/166791/81911>
 \usepackage[utf8]{inputenc}
 \usepackage[english,ngerman]{babel}
 \usepackage{hyperref}
-\usepackage[style=authortitle-icomp]{biblatex}
+\usepackage[autostyle=true,english=british,german=guillemets]{csquotes}
+\usepackage{listings}
+\usepackage[style=authortitle-icomp,babel=hyphen]{biblatex}
 % Typography
 \usepackage{microtype} % tweak spacing and sizing so everything fits nicely
-\usepackage[babel,german=guillemets]{csquotes} % harmonize (french) quotes
 
 % Basic Configuration
 \bibliography{master.bib}
 
+\lstset{
+  frame=single,
+  upquote=true,
+  columns=fixed,
+  breaklines=true
+}
+\lstdefinelanguage{shell}{
+  keywords = {\$},
+  morekeywords = {wwweb}
+}
+
 \begin{document}
-  \twocolumn[
-    \input{tex/0.1.0-title}
-    \input{tex/0.2.0-abstract}
-  ]
+  \input{TeX/0.1-title}
+  \input{TeX/0.2-abstract}
   
-  \include{tex/0.3.0-inhaltsverzeichnis}
+  \include{TeX/0.3-inhaltsverzeichnis}
   
-  \include{tex/1.0.0-einleitung}
+  \include{TeX/1.0-einleitung}
   
-  \section{Beobachten und Verstehen} % (fold)
+  \section{Überblick}
+  \label{sec:uberblick}
+  \input{TeX/2.1-software-agenten}
+  \input{TeX/2.2-einsatz-bots}
+  
+  \clearpage
+  
+  \section{Beobachten und Verstehen}
   \label{sec:beobachten_und_verstehen}
-  \include{tex/4.1.0-spam}
-  % section beobachten_und_verstehen (end)
+  \input{TeX/4.1-spam}
+  \input{TeX/4.2-phishing}
+  \clearpage
+  \input{TeX/4.3-kuenstliche-intelligenz}
   
-  \input{tex/9.0.0-bibliography}
+  \clearpage
+  
+  \section{Eigener Software-Agent}
+  \label{sec:eigener_software-agent}
+  \input{TeX/5.1-wwweb}
+  \input{TeX/5.2-auswertung-wwweb}
+  
+  \clearpage
+  
+  \section{Die Software-Agenten Suite}
+  \label{sec:die_software_agenten_suite}
+  \input{TeX/6.0-software-agenten-suite}
+  
+  \include{TeX/9.0-bibliography}
 \end{document}

@@ -3,7 +3,7 @@ TM_LATEX_MASTER = "$CWD/LaTeX/master.tex"
 
 # Filter
 include = "{$include,.gitignore}"
-exclude = "{$exclude,*.{aux,bbl,bcf,blg,fdb_latexmk,fls,log,run.xml,synctex.gz}}"
+exclude = "{$exclude,*.{out,toc,aux,bbl,bcf,blg,fdb_latexmk,fls,log,run.xml,synctex.gz}}"
 
 # TextMate
 spellChecking = true
