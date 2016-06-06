@@ -171,7 +171,9 @@ alphanumerischen Zeichen lässt sich in standardisierten Tabellen
 nachschlagen.\footcite{rfc:3986}
 
 \begin{lstlisting}[language=HTML]
-<a href="mailto:%6e%61%6d%65%40%65%78%61%6d%70%6c%65%2e%6f%72%67">name@example.org</a>
+<a href="mailto:%6e%61%6d%65%40%65%78%61%6d%70%6c%65%2e%6f%72%67">
+  name@example.org
+</a>
 \end{lstlisting}
 
 \subparagraph{HTML-Entitäten-Referenzen}
@@ -184,19 +186,21 @@ im Unicode-Standard geführt wird. Beginnt die Entitäten-Referenzen mit
 \texttt{\&\#x}, muss der Code-Point in Hexadezimalzahlen, anstelle von
 Dezimalzahlen, angegeben werden.
 
-\begin{lstlisting}[language=HTML]
-<a href="mailto:&#110;&#97;&#109;&#101;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#111;&#114;&#103;">name@example.org</a>
+\begin{lstlisting}[language=HTML,escapechar=\$]
+<a href="mailto:&#110;&#97;&#109;&#101;&#64;&#101;&#120;&#97;$\ldots$">
+  name@example.org
+</a>
 \end{lstlisting}
 
 \subparagraph{URL-Codierung + HTML-Entitäten-Referenzen}
 \label{spar:url-codierung-html-entitaeten-referenzen}
 
-URL-Codierung kann auch mit HTML-Entitäten-Referenzen kombiniert werden. Das
-folgende Beispiel beschreibt eine Mischung zu jeweils 50\,\% der beiden
-Kodierungen.
+URL-Codierung kann auch mit HTML-Entitäten-Referenzen kombiniert werden.
 
-\begin{lstlisting}[language=HTML]
-<a href="mailto:%6e%61&#109;&#101;&#64;&#101;&#120;&#97;&#109;%70%6c&#101;%2e&#111;%72&#103;">name@example.org</a>
+\begin{lstlisting}[language=HTML,escapechar=\$]
+<a href="mailto:%6e%61&#109;&#101;&#64;&#101;&#120;&#97;&#109;$\ldots$">
+  name@example.org
+</a>
 \end{lstlisting}
 
 \subsubsection{Kommentare}
