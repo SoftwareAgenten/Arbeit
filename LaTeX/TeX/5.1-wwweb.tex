@@ -77,7 +77,7 @@ Sind \emph{Node.js} und \emph{npm}, jeweils in der erforderten Version,
 vorhanden, so genügt der folgende Befehl, um WWWEB auf einem Computer zu
 installieren.
 
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}[language=shell]
 $ npm install -g wwweb
 \end{lstlisting}
 
@@ -93,7 +93,7 @@ Der folgende Befehl startet WWWEB bei \texttt{example.org}, schreibt alle zwei
 Minuten einen Bericht in das Verzeichnis \texttt{\textasciitilde{}/reports} und
 wartet höchstens neun Sekunden auf das Laden von Dateien.
 
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}[language=shell]
 $ wwweb -d example.org -s 120 -o ~/reports --timeout 9000
 \end{lstlisting}
 
