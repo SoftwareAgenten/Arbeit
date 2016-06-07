@@ -16,7 +16,7 @@ folglich analysiert und in einem abstrakten Datenmodell festgehalten.
 
 Damit hat WWWEB \texttt{example.org} abgearbeitet. Die Domäne wird in eine
 Liste eingetragen, um nicht erneut analysiert zu werden. Im Folgenden
-durchläuft WWEB dieselbe Prozedur auf einer der zuvor gefundenen Domänen. Da
+durchläuft WWWEB dieselbe Prozedur auf einer der zuvor gefundenen Domänen. Da
 die meisten Startseiten zu mehr als einer anderen Domäne verlinken, füllt sich
 die Liste schneller an, als sie entleert wird.
 
@@ -49,14 +49,14 @@ bezeichnet.
 Ein Bericht besteht aus einer Startzeit, der Startdomäne und einem Protokoll.
 Ein Protokoll wiederum besteht aus einer Reihe von Aufzeichnungen
 (\emph{Records}). Diese Aufzeichnungen setzen sich aus einem Zeitpunkt und
-einer Domäne-Konfiguration (\emph{DomainSetting}) zusammen, welche eine Domäne
+einer Domäne-Konfiguration (\emph{DomainSettings}) zusammen, welche eine Domäne
 mit einem Satz an Regeln (\emph{RuleSet}) verknüpfen. Ein \emph{RuleSet}
 beschreibt den Zusammenhang eines User-Agents und den dafür definierten Regeln
 (\emph{Rules}).
 
 WWWEBs Netzwerkanfragen setzen auf \emph{Promises} auf, eine Technik, bei
 welcher ein Teil des Programms ein Versprechen äußert, gewisse Daten
-bereitzustellen. So lässt sich ein asynchroner Programmierstil mit interaktiven
+bereitzustellen. So lässt sich ein asynchroner Programmierstil mit iterativen
 Charakteristiken umsetzen.
 
 Der Speichervorgang, welcher den aktuellen Bericht in einen JSON-String
@@ -71,7 +71,7 @@ WWWEB setzt die \emph{Node.js}-Umgebung in der Version 6.0.0 oder höher voraus
 und lässt sich über den Package-Manager \emph{npm} installieren.\footnote{Die
 Projektseite für das npm-Packet findet sich unter
 \url{https://www.npmjs.com/package/wwweb}} Sowohl \emph{Node.js} als auch
-\emph{npm} sind für Windows, OS~X und Linux verfügbar.
+\emph{npm} sind für Microsoft Windows, OS~X und Linux verfügbar.
 
 Sind \emph{Node.js} und \emph{npm}, jeweils in der erforderten Version,
 vorhanden, so genügt der folgende Befehl, um WWWEB auf einem Computer zu

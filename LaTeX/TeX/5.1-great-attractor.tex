@@ -1,7 +1,7 @@
 \label{topic:great-attractor}
 Die Daten über das Browse-Verhalten von Software-Agenten wurden von einer
 eigens für diese Arbeit erstellten Software-Suite gesammelt. Die Suite wurde
-unter dem Namen \emph{Great Attractor}\footnote{Der Name wurde in Anlehnung an
+unter dem Namen \emph{Great-Attractor}\footnote{Der Name wurde in Anlehnung an
 das kosmische Filament, im deutschsprachigen Raum auch als \emph{Großer
 Attraktor} bekannt, gewählt.} im Internet unter der MIT-Lizenz\footnote{Eine
 Kopie der Lizenz ist unter \url{https://legal.addpixel.net/licenses/MIT/} zu
@@ -10,7 +10,7 @@ veröffentlicht.\footnote{GitHub.com Projektseite:
 \url{https://github.com/SoftwareAgenten/Great-Attractor}}
 
 Die MIT-Lizenz erlaubt die Vervielfältigung, Veränderung und Unterlizenzierung
-der \emph{Great Attractor} Softwares sowohl für den privaten als auch den
+der \emph{Great-Attractor} Softwares sowohl für den privaten als auch den
 kommerziellen Gebrauch. Dabei muss die Lizenzangabe samt Copyright Anmerkung
 unverändert beibehalten werden.\footnote{Hierbei handelt es sich lediglich um
 eine kurze Zusammenfassung die keinerlei Anspruch auf Vollständigkeit oder
@@ -18,7 +18,7 @@ Rechtsgültigkeit ausübt. Eine vollständige Kopie der Lizenz findet sich unter
 \url{https://legal.addpixel.net/licenses/MIT/}.} Zufolge der Open Source
 Initiative ist die MIT-Lizenz der Open Source Definition
 konform.\footcite{license:MIT} \emph{Open Source} bedeutet in diesem Kontext:
-der Quellcode der \emph{Great Attractor} Softwares kann frei eingesehen werden
+der Quellcode der \emph{Great-Attractor} Softwares kann frei eingesehen werden
 und in anderen Software-Projekten zum Einsatz kommen.
 
 GitHub.com wurde zugrunde der folgenden Argumente als Open-Source Code
@@ -31,13 +31,13 @@ Plattform gewählt.
   aktiven Nutzern.
 \item
   GitHub setzt auf der \emph{Git} Versionsverwaltungssoftware auf, welche sowohl
-  bei den \emph{Great Attractor} Softwares zum Einsatz kommt, als auch bei der
+  bei den \emph{Great-Attractor}-Softwares zum Einsatz kommt, als auch bei der
   Erstellung der \emph{Software-Agenten im Internet} Arbeit verwendet wird.
 \end{enumerate}
 
 \subsection{Architektur und Philosophie}
-\label{sub:architektur_und_philosophie} \emph{Great Attractor} (GA) besteht aus
-zwei Kernkomponenten: \emph{GA-Archive}, ein öffentliches Archiv mit allen im
+\label{sub:architektur_und_philosophie} \emph{Great-Attractor} (GA) besteht aus
+zwei Kernkomponenten: \emph{GA-Archive}, ein öffentliches Archiv aller im
 Rahmen dieser Arbeit gesammelten Daten\footnote{vollständig einsichtbar unter
 \url{https://github.com/SoftwareAgenten/GA-Archive}} und eine Reihe an
 Applikationen, die Datensätze für \emph{GA-Archive} sammeln.\footnote{Eine
@@ -53,13 +53,14 @@ Das GA-System erfüllt folgende Anforderungen.
   JSON-Format auf dem Dateisystem gesichert. Dies erleichtert es
   Sicherungskopien der Datensätze anzufertigen und diese folglich zu
   veröffentlichen bzw. auf anderen Wegen zu vervielfältigen.
+  
 \item
   \textbf{Portabilität des Systems}. GA wurde in der Programmiersprache PHP
   verfasst, welche auf allen gängigen Computer-Betriebsystemen\footnote{
-  Darunter: \emph{Linux}, \emph{FreeBSD}, \emph{Unix}, \emph{Windows}
-  und \emph{Darwin}} genutzt werden kann. Außerdem ist das JSON
-  Datenaustauschformat, in welchem Daten gesichert werden, einfach für Menschen
-  zu lesen\footcite{jsonDe} und für Maschinen einfach zu
+  Darunter: \emph{Linux}, \emph{FreeBSD}, \emph{Unix}, \emph{Windows} und
+  \emph{Darwin}} genutzt werden kann. Außerdem ist das
+  JSON-Datenaustauschformat, in welchem Daten gesichert werden, einfach für
+  Menschen zu lesen\footcite{jsonDe} und für Maschinen einfach zu
   parsen.\footcite{jsonDe} Dies erlaubt es nicht-GA-Systemen auf die gewonnenen
   Daten zurückzugreifen und ergänzende Operationen auszuführen.
 \end{itemize}
