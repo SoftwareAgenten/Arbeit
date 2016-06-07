@@ -5,12 +5,10 @@
 
 \documentclass{article}
 
-% Layout
 \usepackage[a4paper]{geometry}
-% \usepackage{booktabs} % nicer tables
 \usepackage{tabularx}
-\usepackage[hang,flushmargin]{footmisc} % don't indent all the things
-% Text
+\usepackage[hang,flushmargin]{footmisc}
+\usepackage{fnpct}
 \usepackage[T1]{fontenc} % <http://tex.stackexchange.com/a/166791/81911>
 \usepackage[utf8]{inputenc}
 \usepackage[english,ngerman]{babel}
@@ -18,10 +16,9 @@
 \usepackage[autostyle=true,english=british,german=guillemets]{csquotes}
 \usepackage{listings}
 \usepackage[style=authortitle-icomp,babel=hyphen]{biblatex}
-% Typography
 \usepackage{microtype} % tweak spacing and sizing so everything fits nicely
 
-% Basic Configuration
+% Load Bibliography
 \bibliography{master.bib}
 
 % <http://tex.stackexchange.com/a/6977/81911>
@@ -31,6 +28,7 @@
 % <http://tex.stackexchange.com/a/123888/81911>
 \AdaptNoteOpt\footcite\multfootcite
 
+% Style Code
 \lstset{
   frame=single,
   upquote=true,
