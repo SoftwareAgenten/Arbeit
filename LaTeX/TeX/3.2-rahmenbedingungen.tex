@@ -1,0 +1,33 @@
+\subsection{Rahmenbedingungen}
+\label{sub:forschung_rahmenbedingungen}
+
+Um die Verwendung der \emph{Software-Agenten im Internet}-Softwares zu
+erleichtern, wurden sie in Programmiersprachen verfasst, die nicht an eine
+Plattform gebunden sind.
+
+\begin{itemize}
+\item
+  \emph{Great-Attractor} wurde in PHP verfasst, eine verhältnismäßig alte
+  Programmiersprache, die nahezu von jedem Webhosting-Dienst unterstützt wird.
+  PHP wird für Microsoft Windows, OS~X, Linux und andere Betriebsysteme
+  angeboten.
+\item
+  \emph{GA-Analyzer} und WWWEB wurden für die \emph{Node.js}-Umgebung
+  programmiert und lassen sich so ebenfalls unter Microsoft Windows, OS~X und
+  Linux ausführen. Während \emph{Great-Attractor} in den meisten Fällen auf
+  einem externen Hoster installiert wird, können diese Programme nur auf dem
+  eigenen Computer ausgeführt werden. Daher wird \emph{Node.js} in der derzeit
+  aktuellsten Version, 6, vorausgesetzt.
+\item
+  \emph{process\_mailbox}, eine Spezialsoftware, die IMAP-Postfächer in das
+  JSON-Datei-Format konvertiert, wurde in der Programmiersprache Go
+  geschrieben. Go ist eine kompilierbare Sprache, was die Ausführung deutlich
+  beschleunigt. Go ist für Microsoft Windows, OS~X, Linux und andere
+  Betriebsysteme verfügbar.
+\end{itemize}
+
+Des Weiteren wurden alle gewonnen Daten in für Computer einfach zu parsende
+Formate geschrieben und online in
+\emph{GA-Archive}\footnote{\url{https://github.com/SoftwareAgenten/GA-Archive}}
+veröffentlicht. Zu diesen Formaten zählen JSON, TOML, XML und CSV. Das erlaubt
+es anderen Programmen, diese Daten zu importieren und zu verarbeiten.
