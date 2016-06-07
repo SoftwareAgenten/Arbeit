@@ -12,9 +12,9 @@ M = Approved Markdown
 ✓   2.2  Einsatz
 ✓     2.2.1  Gutartige Bots
 ✓     2.2.2  Bösartige Bots
-P 3  Forschung
-P   3.1  Methoden
-P   3.2  Rahmenbedingungen
+✓ 3  Forschung
+✓   3.1  Methoden
+✓   3.2  Rahmenbedingungen
 ✓ 4  Beobachten & Verstehen
 ✓   4.1  Spam
 ✓     4.1.1  Spam-Bekämpfung
@@ -32,9 +32,9 @@ P   3.2  Rahmenbedingungen
 ✓     5.2.2  Konfiguration
 ✓     5.2.3  Verhalten
 ✓     5.2.4  Einsatz
-P   5.3  Auswertung der Great-Attractor-Daten
-P     5.3.1  Aufbau des Honeypot
-P     5.3.2  Login-Versuche
+✓   5.3  Auswertung der Great-Attractor-Daten
+✓     5.3.1  Aufbau des Honeypot
+✓     5.3.2  Login-Versuche
 ✓ 6  Eigener Software-Agent
 ✓   6.1  WWWEB
 ✓     6.1.1  Architektur
