@@ -12,9 +12,9 @@ P   1.2  Aufbau
 ✓   2.2  Einsatz
 ✓     2.2.1  Gutartige Bots
 ✓     2.2.2  Bösartige Bots
-  3  Forschung
-    3.1  Methoden
-    3.2  Rahmenbedingungen
+D 3  Forschung
+D   3.1  Methoden
+D   3.2  Rahmenbedingungen
 ✓ 4  Beobachten & Verstehen
 ✓   4.1  Spam
 ✓     4.1.1  Spam-Bekämpfung
