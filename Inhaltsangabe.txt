@@ -1,8 +1,3 @@
----
-D = Draft
-P = Pending Approval
-M = Approved Markdown
----
 ✓ 0  Abstract
 ✓ 1  Einleitung
 ✓   1.1  Motivation
@@ -43,6 +38,6 @@ M = Approved Markdown
 ✓   6.2  Auswertung der WWWEB-Daten
 ✓     6.2.1  Nicht zugelassene Verzeichnisse
 ✓     6.2.2  User-Agents
-P 7  Zusammenfassung
-  8  Weiterführende Literatur
+✓ 7  Zusammenfassung
 ✓ 9  Literaturverzeichnis
+✓ 8  Weiterführende Literatur
