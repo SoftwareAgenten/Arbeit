@@ -24,6 +24,13 @@
 % Basic Configuration
 \bibliography{master.bib}
 
+% <http://tex.stackexchange.com/a/6977/81911>
+\DeclareBibliographyCategory{cited}
+\AtEveryCitekey{\addtocategory{cited}{\thefield{entrykey}}}
+
+% <http://tex.stackexchange.com/a/123888/81911>
+\AdaptNoteOpt\footcite\multfootcite
+
 \lstset{
   frame=single,
   upquote=true,
@@ -79,6 +86,15 @@
   \input{TeX/6.1-wwweb}
   \input{TeX/6.2-auswertung-wwweb}
   
-  \include{TeX/9.0-bibliography}
   \include{TeX/7.0-zusammenfassung}
+  
+  \clearpage
+  
+  % Show Bibliography
+  \nocite{*}
+  \printbibliography[category=cited]
+  
+  \clearpage
+  
+  \printbibliography[title={Weiterführende Literatur},notcategory=cited,resetnumbers=true]
 \end{document}
