@@ -1,79 +1,14 @@
-Die Daten über das Browse-Verhalten von Software-Agenten wurden von einer
-eigens für diese Arbeit erstellten Software-Suite gesammelt. Die Suite wurde
-unter dem Namen \emph{Great Attractor}\footnote{Der Name wurde in Anlehnung an
-das kosmische Filament, im deutschsprachigen Raum auch als \emph{Großer
-Attraktor} bekannt, gewählt.} im Internet unter der MIT-Lizenz\footnote{Eine
-Kopie der Lizenz ist unter \url{https://legal.addpixel.net/licenses/MIT/} zu
-finden.} auf der Open-Source Code Plattform GitHub.com
-veröffentlicht.\footnote{GitHub.com Projektseite:
-\url{https://github.com/SoftwareAgenten/Great-Attractor}}
-
-Die MIT-Lizenz erlaubt die Vervielfältigung, Veränderung und Unterlizenzierung
-der \emph{Great Attractor} Softwares sowohl für den privaten als auch den
-kommerziellen Gebrauch. Dabei muss die Lizenzangabe samt Copyright Anmerkung
-unverändert beibehalten werden.\footnote{Hierbei handelt es sich lediglich um
-eine kurze Zusammenfassung die keinerlei Anspruch auf Vollständigkeit oder
-Rechtsgültigkeit ausübt. Eine vollständige Kopie der Lizenz findet sich unter
-\url{https://legal.addpixel.net/licenses/MIT/}.} Zufolge der Open Source
-Initiative ist die MIT-Lizenz der Open Source Definition
-konform.\footcite{license:MIT} \emph{Open Source} bedeutet in diesem Kontext:
-der Quellcode der \emph{Great Attractor} Softwares kann frei eingesehen werden
-und in anderen Software-Projekten zum Einsatz kommen.
-
-GitHub.com wurde zugrunde der folgenden Argumente als Open-Source Code
-Plattform gewählt.
-
-\begin{enumerate}
-\item
-  GitHub.com ist zur Zeit dieses Schreibens die populärste Open-Source Code
-  Plattform\footcite{githubPop} und erfreut sich demgemäß einer großen Anzahl an
-  aktiven Nutzern.
-\item
-  GitHub setzt auf der \emph{git} Versionsverwaltungssoftware auf, welche sowohl
-  bei den \emph{Great Attractor} Softwares zum Einsatz kommt als auch bei der
-  Erstellung der \emph{Software-Agenten im Internet} Arbeit verwendet wird.
-\end{enumerate}
-
-\subsection{Architektur und Philosophie}
-\label{sub:architektur_und_philosophie}
-\emph{Great Attractor} (GA) besteht aus zwei Kernkomponenten: dem gleichnamigen
-Archiv an von Bots produzierten Daten\footnote{vollständig einsichtbar unter
-\url{https://github.com/SoftwareAgenten/Great-Attractor}} und eine Reihe an
-Applikationen, die Datensätze für das Archiv sammeln.\footnote{Eine Liste alle
-Applikation kann unter
-\url{https://github.com/SoftwareAgenten/Great-Attractor\#data-collectors}
-eingesehen werden.}
-
-Das GA-System erfüllt folgende Anforderungen.
-
-\begin{itemize}
-\item
-  \textbf{Portabilität der Daten}. Sämtliche durch GA gesammelte Daten werden im
-  JSON-Format auf dem Dateisystem gesichert. Dies erleichtert es
-  Sicherungskopien der Datensätze anzufertigen und diese folglich zu
-  veröffentlichen bzw. auf anderen Wegen zu vervielfältigen.
-\item
-  \textbf{Portabilität des Systems}. GA wurde in der Programmiersprache PHP
-  verfasst, welche auf allen gängigen Computer-Betriebsystemen\footnote{
-  Darunter: \emph{Linux}, \emph{FreeBSD}, \emph{Unix}, \emph{Windows}
-  und \emph{Darwin}} genutzt werden kann. Außerdem ist das JSON
-  Datenaustauschformat, in welchem Daten gesichert werden, einfach für Menschen
-  zu lesen\footcite{jsonDe} und für Maschinen einfach zu
-  parsen.\footcite{jsonDe} Dies erlaubt es nicht-GA-Systemen auf die gewonnenen
-  Daten zurückzugreifen und ergänzende Operationen auszuführen.
-\end{itemize}
-
 \subsection{Funktionsweise der GA-Softwares}
 \label{sub:funktionsweise_der_ga_softwares}
+
 Das GA-System sammelt Daten über das Verhalten von Webseiten-Besuchern. Um
-diese Daten zu erheben, muss es in eine bestehende Webseite eingebunden werden
+diese Daten zu erheben, muss es in eine bestehende Webseite eingebunden werden,
 die folglich als Wirt dient. Sämtliche Logik und Konfiguration einer
 GA-Software findet sich in einer einzigen PHP-Datei: \texttt{system.php}. Dies
 erleichtert es, die GA-Software in eine Webseite einzubinden. Die Datei
 befindet sich in einem Verzeichnis namens \texttt{great-attractor}, welches als
 Namensraum\footcite{wp:namensraum} dient. Aufgezeichnete Daten werden in ein
-Verzeichnis namens \texttt{data} als JSON-Dateien geschrieben. Sollte dieser
-Name mit dem bestehenden Webseite-System in Konflikt
+Verzeichnis namens \texttt{data} als JSON-Dateien geschrieben.
 
 \subsubsection{Installation}
 \label{ssub:ga_installation}
@@ -87,9 +22,9 @@ lässt sich das GA-System wie folgt einbinden.
 
 # GA
 
-include_once('great-attractor/system.php');
+include_once("great-attractor/system.php");
 
-ga_init('tracking-name');
+ga_init("tracking-name");
 ga_register_visit();
 ga_register_request();
 

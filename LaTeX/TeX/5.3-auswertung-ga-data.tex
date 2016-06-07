@@ -1,0 +1,212 @@
+\subsection{Auswertung der Great-Attractor-Daten}
+\label{sub:auswertung-der-great-attractor-daten}
+
+\subsubsection{Aufbau des Honeypots}
+\label{ssub:aufbau-des-honeypots}
+
+Die Great-Attractor Software wurde im Rahmen dieser Arbeit unter der Domäne
+\texttt{motionfill.com} installiert. Als Wirt-Webseite diente ein frisch
+installiertes WordPress-CMS in der Version 4.5.2. Die Domäne
+\texttt{motionfill.com} wurde verwendet, da sie zum Zeitpunkt der
+GA-Installation bereits vier Jahre und sechs Monate alt war. Damit stand die
+Chance gut, dass die Domäne bereits in einer Liste von Domänen aufgeführt ist,
+die bösartige Software-Agenten abarbeiten würden. Weiters war die Domäne
+bereits seit zwei Jahren inaktiv. Die Wahrscheinlichkeit, dass ein
+menschlicher Besucher die Domäne aufsuchen würde, war dementsprechend gering.
+
+Am 23. Mai 2016 um 21:06 Uhr (CET) wurde, kurz nach der WordPress-Installation,
+der Link \texttt{http://motionfill.com/?r=tw} auf dem sozialen Netzwerk
+Twitter\footnote{Permalink zum Tweet:
+\url{https://twitter.com/SoftwareAgenten/status/734824609590202368}}
+veröffentlicht. Der verwendete Twitter-Account hatte zu diesem Zeitpunk keine
+\emph{Twitter-Follower} und war damit praktisch nur für Bots erreichbar. Um
+21:19 Uhr wurde die HTTP-404-Fehlerseite von \texttt{https://blogfill.de} so
+umgestellt, dass sie alle Anfragen auf \texttt{http://motionfill.com/?r=bf}
+umleitete.
+
+Folglich wurden eine Reihe an Einstellungen am WordPress-CMS vorgenommen, um
+die Sicherheit des Systems bewusst zu verringern. Das sollte Bots aggressivere
+Attacken erlauben.\footnote{Selbstverständlich wurde bei der Installation ein
+besonders sicheres Password für den Administratoren-Account gewählt.}
+
+\begin{table}[h]
+  \begin{tabularx}{\textwidth}{ l|l|X }
+    \textbf{Uhrzeit} & \textbf{Einstellungen} & \textbf{Aktion}\\
+    \hline
+    21:25 & General Settings \to Membership & \emph{Anyone can register} auf \emph{wahr} setzen \\
+    \hline
+    21:27 & General Settings \to New User Default Role & auf \emph{Contributor} setzen \\
+    \hline
+    21:30 & Discussion Settings \to Other comment settings & \emph{Comment author must fill out name and email} auf \emph{falsch} setzen \\
+    \hline
+    21:31 & Discussion Settings \to Before a comment appears & \emph{Comment author must have a previously approved comment} auf \emph{falsch} setzen \\    
+    \hline
+    21:33 & Discussion Settings \to Comment Moderation & \emph{Hold a comment in the queue if it contains ??? or more links.} auf \emph{256} setzen \\
+  \end{tabularx}
+  
+  \caption{Die Einstellungen, die am WordPess-CMS vorgenommen wurden}
+  \label{tab:wprdPressConfig}
+\end{table}
+
+Zudem wurde um 21:36 Uhr ein Artikel aus reinem Blindtext\footnote{TK
+\url{https://de.wikipedia.org/wiki/Blindtext} 2016-06-06}
+veröffentlicht,\footnote{Adresse:
+\texttt{http://motionfill.com/2016/05/23/catch-all/}} der keine weitere
+Funktion erfüllen sollte, als für künstliche Aktivitäten zu sorgen, die für
+Bots anziehend wirken könnte.
+
+Am 31. Mai 2016 wurde das Experiment um 19:22 Uhr beendet. In dieser Zeitspanne
+sammelte das Great-Attractor-System 7.482 einzelne Zugriffe. 3.601 dieser
+Zugriffe enthielten HTTP-POST-Daten, mit welchen sich die Bots\footnote{Dass es
+sich in diesem Fall um Bots handelt, lässt darauf schließen, dass die meisten
+Anmeldeanfragen direkt an den Server gesendet wurden, also ohne zuvor die
+Webseite oder die Anmeldeseite zu besuchen. Das legt nahe, dass Bots die Domäne
+als aktiv eingestuft hatten und daraufhin direkte HTTP-POST-Anfragen an den
+Server sendeten, ein Verhalten, das in in einem handelsüblichen Webbrowser wie
+ihn Menschen benutzen nicht möglich ist.} versuchten an der Webseite anzumelden.
+
+\subsubsection{Analyse der gewonnenen Daten}
+\label{ssub:analyse-der-gewonnenen-daten}
+
+\begin{table}[h]
+  \begin{tabular}{ l|r }
+    \textbf{Passwort} & \textbf{Anzahl}\\
+    \hline
+    ginger & 10 \\
+    angela & 10 \\
+    adidas & 10 \\
+    babydoll & 10 \\
+    darkness & 10 \\
+    elizabeth & 10 \\
+    87654321 & 10 \\
+    1234554321 & 9 \\
+    natalia & 9 \\
+    motorola & 9 \\
+    1w2q3r4e & 9 \\
+    gold & 9 \\
+    555555 & 9 \\
+    123123 & 9 \\
+    david & 9 \\
+    alex & 9 \\
+    123465 & 9 \\
+    monkey1 & 9 \\
+    fatima & 9 \\
+    catherine & 9 \\
+    hunter & 9 \\
+    123zxc & 9 \\
+    blahblah & 9 \\
+    ricardo & 9 \\
+    a1s2d3 & 9 \\
+    123qwe & 9 \\
+    123654 & 9 \\
+    oooooo & 9 \\
+    ghbdtn & 9 \\
+    sarah & 9 \\
+  \end{tabular}
+  
+  \caption{Die 30 am häufigsten probierten Passwörter}
+  \label{tab:maxPasswords}
+\end{table}
+
+Ein Großteil der Passwörter in Tabelle \ref{tab:maxPasswords} machen kurze
+englische Wörter und einfache Muster einer QWERTY-Tastatur\footnote{Das
+QWERTY-Tastaturlayout ist im englischen Sprachraum das am meisten verbreitete
+Tastaturlayout und ähnelt anderen Layouts wie dem deutschen QWERTZ- oder dem
+französischen AZERTY-Layout.} aus.
+
+\begin{table}[h]
+  \begin{tabular}{ l|l|r }
+    \textbf{Benutzername} & \textbf{Passwort} & \textbf{Anzahl}\\
+    \hline
+    admin & 1234567 & 2 \\
+    admin & pass & 2 \\
+    admin & 123456789 & 2 \\
+    admin & 12345678 & 2 \\
+    admin & password & 2 \\
+    admin & 123123 & 2 \\
+    admin & 1234 & 2 \\
+  \end{tabular}
+  
+  \caption{Die meist verwendeten Benutzername-Passwort-Kombinationen}
+  \label{tab:maxUserPass}
+\end{table}
+
+Die Tabelle \ref{tab:maxUserPass} zeigt alle Anmeldeversuche, die zwei mal
+durchgeführt wurden. Alle anderen Kombinationen von Benutzername und Passwort
+wurden nur einmal probiert. Angesichts der Tatsache, dass
+von den 3.601 Anmeldeversuchen 3.587 von einer einzigen IP-Adresse ausgingen,
+die sich auf Russland zurückverfolgen lässt, ergibt das viel Sinn.
+
+\begin{table}[h]
+  \begin{tabular}{ l|r }
+    \textbf{Benutzername} & \textbf{Anzahl}\\
+    \hline
+    admin & 334 \\
+    support & 334 \\
+    tester & 334 \\
+    test & 332 \\
+    \{host\} & 331 \\
+    \{hostname\} & 328 \\
+    adm & 324 \\
+    administrator & 322 \\
+    user2 & 322 \\
+    Administrator & 319 \\
+    user & 319 \\
+    kristleguiffretgo & 1 \\
+    florian & 1 \\
+  \end{tabular}
+  
+  \caption{Die am häufigsten probierten Benutzernamen}
+  \label{tab:maxUsername}
+\end{table}
+
+Im Vergleich zu der Anzahl aller unterschiedlichen probierten Passwörter
+(insgesamt 616), wirkt die Anzahl der unterschiedlichen probierten
+Benutzernamen (13) sehr klein. Tabelle \ref{tab:maxUsername} zeigt dabei die
+vollständige Liste an Benutzernamen samt Anzahl an. Bemerkenswert ist hierbei
+der einmalig probierte Benutzername \emph{florian}, der in Kombination mit dem
+Passwort \emph{florian} an das Login-System von WordPress gesendet wurde.
+Interessant daran ist, dass der tatsächliche Benutzername für die
+WordPress-Installation \emph{florian} war, wenn auch mit einem anderen
+Passwort. \emph{Florian} ist zudem der Vorname des Besitzers der Domäne
+\texttt{motionfill.com}. Wie der Bot, der seine Anfrage aus dem
+chinesischen Festland versendet hatte, genau auf diese Information gestoßen ist,
+bleibt unklar. Der Name \emph{Florian} taucht beispielsweise nicht in den
+WHOIS-Informationen der Domäne \texttt{motionfill.com} auf.
+
+\begin{table}[h]
+  \begin{tabularx}{\textwidth}{ X|r }
+    \textbf{User-Agent} & \textbf{\#}\\
+    \hline
+    – & 3624 \\
+    jetmon/1.0 (Jetpack Site Uptime Monitor by WordPress.com) & 2276 \\
+    Mozilla/5.0 (compatible; MJ12bot/v1.4.5; http://www.majestic12.co.uk/bot.php?+) & 588 \\
+    Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) & 116 \\
+    Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html) & 110 \\
+    Java/1.4.1\_04 & 106 \\
+    Mozilla/5.0 (Windows NT 6.0; rv:16.0) Firefox/12.0 & 74 \\
+    Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html) & 59 \\
+    Mozilla/5.0 (Windows NT 6.1; rv:34.0) Gecko/20100101 Firefox/34.0 & 48 \\
+    Java/1.8.0\_91 & 36 \\
+    Mozilla/5.0 (Windows NT 6.0; rv:14.0) Gecko/20100101 Firefox/14.0.1 & 30 \\
+    Mozilla/5.0 (Windows NT 6.2; WOW64) & 26 \\
+  \end{tabularx}
+  
+  \caption{Die zwölf am meisten verwendeten User-Agents}
+  \label{tab:maxUseragent}
+\end{table}
+
+Wie in Tabelle \ref{tab:maxUseragent} erkenntlich, war für die Mehrheit der
+Anfragen kein User-Agent-HTTP-Header gesetzt. Auf Platz zwei findet sich der
+WordPress-eigene Laufzeit-Monitoring-Dienst \emph{Jetpack}. In der Tabelle
+finden sich zudem zwei Suchmaschinen-User-Agenten: \texttt{bingbot/2.0} und
+\texttt{Googlebot/2.1}. Diese Daten sind mit Vorsicht zu genießen, jeder Bot
+kann den eigenen User-Agent frei wählen und daher auch den anderer Bots angeben.
+
+Der vollständige Datenbestand lässt sich online unter
+\url{https://github.com/SoftwareAgenten/GA-Archive/tree/master/Great-Attractor}
+einsehen. Diese Daten wurden mit dem
+\emph{GA-Analyzer}\footnote{\emph{GA-Analyzer} Projektseite:
+\url{https://github.com/SoftwareAgenten/GA-Analyzer}} ausgewertet, eine
+Spezialsoftware, die eigens für das Untersuchen von
+Great-Attractor-Datenbeständen entwickelt wurde.

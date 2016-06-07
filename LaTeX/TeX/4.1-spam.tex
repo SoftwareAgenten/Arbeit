@@ -6,10 +6,10 @@ bezeichnet. Spam-Nachrichten stellen per definitionem eine leidige
 Kommunikationsform dar. Die gewöhnlichste Art, namhaft durch ihre Omnipräsenz
 im Leben mit dem Internet, stellt der E-Mail-Spam dar.
 
-Der Begriff fand noch vor dem Erscheinen des \emph{World Wide Web} anklang,
+Der Begriff fand noch vor dem Erscheinen des \emph{World Wide Web} Anklang,
 beschrieb damals jedoch eine Flut an unerwünschten
 Nachrichten.\footcite{originTermSpam} Erste Aufkommen des Phänomens wurden im
-ARPANET\footcite{junkMailProblem} und im USENET beobachtet.
+ARPANET\footcite{rfc:706} und im USENET beobachtet.
 
 Der Name \emph{Spam} entspringt dem gleichnamigen Dosenfleisch, welches im
 Zweiten Weltkrieg in großen Mengen an Soldaten verteilt
@@ -27,7 +27,7 @@ Sie bieten zumeist dubiose Produkte oder Dienstleistungen an.
 \subsubsection{E-Mail-Spam vermeiden}
 \label{ssub:e-mail-spam-vermeiden}
 
-Das Problem Werbung und andere unerwünschte Nachrichten zu erhalten, ist nicht
+Das Problem, Werbung und andere unerwünschte Nachrichten zu erhalten, ist nicht
 neu; Papier-Post belästigt Hausbesitzer seit Generationen. Gegenmaßnahmen wie
 \enquote{Bitte keine Werbung einwerfen}-Kleber für das Postfach sind etablierte
 Präventivmaßnahmen, die in einigen Staaten gesetzlich verankert
@@ -46,13 +46,13 @@ E-Mails nicht im Posteingang erscheinen, kann man das Spam-Postfach auf die
 erwarteten Nachrichten untersuchen. Viele E-Mail-Clients erlauben das manuelle
 Markieren von Spam-Mails, sollte eine E-Mail den Spam-Filter überlisten. Diese
 Aktion ist dem einfachen Löschen der Nachricht insofern überlegen, als dass der
-Client die markierte E-Mail auf Spam-Indikatoren hin untersucht um diese in
+Client die markierte E-Mail auf Spam-Indikatoren untersucht um diese in
 seinen Spam-Filter-Algorithmus zu integrieren.
 
 \paragraph{Bilder unterbinden}
 \label{par:bilder-unterbinden}
 
-Eine drastische, wenn auch effiziente Maßnahme ist das vollständige Blockieren
+Eine drastische, wenn auch effiziente Maßnahme, ist das vollständige Blockieren
 aller Bilder. Dadurch, dass Bilder erst beim Darstellen einer E-Mail geladen
 werden, können Spammer herausfinden, ob eine E-Mail-Adresse in aktiver
 Benutzung ist oder nicht -- sprich, ob es sich lohnt weite Spam-Nachrichten zu
@@ -81,12 +81,12 @@ die öffentliche Adresse aggressiver eingestellt werden. In Kapitel
 \paragraph{Keine Interaktionen}
 \label{par:keine-interaktionen}
 
-E-Mails, die als Spam markiert wurden oder von fremden Absendern versendet
-wurden, sollten mit Obacht behandelt werden. Antwortet man auf eine
-Spam-Nachricht, erfährt der Spammer, dass die E-Mail-Adresse aktiv ist. Öffnet
-man einen Anhang, könnte sich darin Schadsoftware befinden. Das Klicken auf
-einen Link kann zu einem der beiden vorherigen Szenarien führen. Nachrichten,
-die auf eine dieser Aktionen drängen, sollten verworfen werden.
+E-Mails, die als Spam markiert oder von fremden Absendern versendet wurden,
+sollten mit Vorsicht behandelt werden. Antwortet man auf eine Spam-Nachricht,
+erfährt der Spammer, dass die E-Mail-Adresse aktiv ist. Öffnet man einen
+Anhang, könnte sich darin Schadsoftware befinden. Das Klicken auf einen Link
+kann zu einem der beiden vorherigen Szenarien führen. Nachrichten, die auf eine
+dieser Aktionen drängen, sollten gelöscht werden.
 
 \subparagraph{Beispiele}
 \label{spar:beispiele}
@@ -116,11 +116,11 @@ E-Mail-Adressen für Menschen lesbar und für Software-Agenten unlesbar machen.
 
 Das Umschreiben einer Adresse vom Format \enquote{name@example.org} in das
 Format \enquote{name {[}at{]} example {[}dot{]} org} verändert das Muster, nach
-dem Software-Agenten suchen. Zusätzlich lassen sich viele weitere Variationen
-desselben Tricks erdenken: \enquote{name-AT-example-DOT-org}. Obwohl es für
-Bots nicht unmöglich ist diese Verschleierung zu durchschauen, ist sie immer
-noch weitaus besser, als die E-Mail-Adresse ohne Verschleierung zu
-veröffentlichen.\footcite{obfuscateEmailAddresses}
+dem Software-Agenten suchen müssen. Zusätzlich lassen sich viele weitere
+Variationen desselben Tricks erdenken: \enquote{name-AT-example-DOT-org}.
+Obwohl es für Bots nicht unmöglich ist diese Verschleierung zu durchschauen,
+ist sie immer noch weitaus besser, als die E-Mail-Adresse ohne Verschleierung
+zu veröffentlichen.\footcite{obfuscateEmailAddresses}
 
 \paragraph{CSS/JavaScript}
 \label{par:cssjavascript}
@@ -146,9 +146,9 @@ Verschlüsslung vor Bots verbergen. Diese Methoden bieten einen für Bots
 praktisch unknackbaren Schutz. Während CSS bei so gut wie 100\% aller
 menschlichen Benutzer aktiviert ist,\footnote{CSS ist für die Gestaltung von
 Webseiten zuständig und bietet daher nicht eine Vielzahl an Sicherheitslücken,
-für welche einige Netzer JavaScript deaktivieren. Die Anzahl an
+für welche einige Nutzer JavaScript deaktivieren. Die Anzahl an
 Webseiten-Benutzern, welche CSS deaktiviert haben, ist derart gering, dass sich
-zu diesem Thema keine fundierte Statistiken finden lasse.} ist JavaScript nur
+zu diesem Thema keine fundierten Statistiken finden lassen.} ist JavaScript nur
 bei 98\,\% aktiviert.\footcite{javaScriptDisableStats} JavaScript basierte
 Verschleierungen grenzen damit 2\,\% aller Benutzer aus, erlauben jedoch eine
 beliebige Verschlüsslung der Adresse, darunter zum Beispiel
@@ -180,9 +180,9 @@ nachschlagen.\footcite{rfc:3986}
 \label{spar:html-entitaeten-referenzen}
 
 Eine Zeichen-Entität-Referenz beschreibt ein Zeichen, indem der Code-Point link
-von \texttt{\&\#} oder \texttt{\&\#x} und rechts von \texttt{;} umgeben sein
-muss. Der Code-Point beschreibt die numerische Position, an welcher das Zeichen
-im Unicode-Standard geführt wird. Beginnt die Entitäten-Referenzen mit
+von \texttt{\&\#} oder \texttt{\&\#x} und rechts von \texttt{;} umgeben wird.
+Der Code-Point beschreibt die numerische Position, an welcher das Zeichen im
+Unicode-Standard geführt wird. Beginnt eine Entitäten-Referenz mit
 \texttt{\&\#x}, muss der Code-Point in Hexadezimalzahlen, anstelle von
 Dezimalzahlen, angegeben werden.
 
@@ -219,7 +219,7 @@ Das Kommentarsystem befand sich unter der Adresse
 als einzige Anti-Spam-Technik eine Kommentarvorschau ein, die vor dem Absenden
 eines Kommentars durchgeführt werden musste. Das alleine bot bereits einen
 guten Schutz gegen Spam,\footcite{howSkipCommentPreview} verhinderte jedoch
-nicht, dass im genannten Zeitraum 719 Spam-Kommentare eingereicht wurden.
+nicht, dass im genannten Zeitraum 719 Spam-Kommentare eingereicht wurden.\footnote{Ein vollständiger Report aller Daten und eine Beschreibung, wie sie gewonnen wurden, findet sich online unter \url{https://github.com/SoftwareAgenten/GA-Archive/tree/master/Comments}.}
 
 Bei den 719 Kommentaren wurde der Name \enquote{Walter} siebenmal und damit am
 häufigsten gewählt. Es wurden insgesamt 71 Links publiziert, dabei handelt es
@@ -234,10 +234,6 @@ leicht rückverfolgt werden.
 Auch interessant ist es, dass von insgesamt 376.165 Zeichen 0,053\,\%
 Steuerzeichen sind, also nicht normale Zeichen, die am Bildschirm dargestellt
 werden, sondern die Darstellung anderer Zeichen beeinflussen. Solche seltene
-Zeichen könnten eingesetzt werden um in primitiven Systeme, die nicht mit
+Zeichen könnten eingesetzt werden, um in primitiven Systemen, die nicht mit
 solcherlei Zeichen rechnen, einen Fehler zu verursachen. 0,27\,\% aller Zeichen
 machen Währungszeichen aus, davon 914 Euro-, 91 Dollar- und 22 Pfund-Zeichen.
-
-Ein vollständiger Report aller Daten und eine Beschreibung, wie sie gewonnen
-wurden, findet sich online unter
-\url{https://github.com/SoftwareAgenten/GA-Archive/tree/master/Comments}.

@@ -5,11 +5,11 @@
 
 \documentclass{article}
 
-% Layout
 \usepackage[a4paper]{geometry}
-\usepackage{booktabs} % nicer tables
-\usepackage[hang,flushmargin]{footmisc} % don't indent all the things
-% Text
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[hang,flushmargin]{footmisc}
+\usepackage{fnpct}
 \usepackage[T1]{fontenc} % <http://tex.stackexchange.com/a/166791/81911>
 \usepackage[utf8]{inputenc}
 \usepackage[english,ngerman]{babel}
@@ -17,12 +17,15 @@
 \usepackage[autostyle=true,english=british,german=guillemets]{csquotes}
 \usepackage{listings}
 \usepackage[style=authortitle-icomp,babel=hyphen]{biblatex}
-% Typography
 \usepackage{microtype} % tweak spacing and sizing so everything fits nicely
 
-% Basic Configuration
+% Images
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+% Load Bibliography
 \bibliography{master.bib}
 
+% Style Code
 \lstset{
   frame=single,
   upquote=true,
@@ -49,6 +52,13 @@
   
   \clearpage
   
+  \section{Forschung}
+  \label{sec:uberblick}
+  \input{TeX/3.1-methoden}
+  \input{TeX/3.2-rahmenbedingungen}
+  
+  \clearpage
+  
   \section{Beobachten und Verstehen}
   \label{sec:beobachten_und_verstehen}
   \input{TeX/4.1-spam}
@@ -58,16 +68,28 @@
   
   \clearpage
   
-  \section{Eigener Software-Agent}
-  \label{sec:eigener_software-agent}
-  \input{TeX/5.1-wwweb}
-  \input{TeX/5.2-auswertung-wwweb}
+  \section{Die Software-Agenten Suite}
+  \label{sec:die_software_agenten_suite}
+  \input{TeX/5.1-great-attractor}
+  \input{TeX/5.2-funktionsweise-ga}
+  \input{TeX/5.3-auswertung-ga-data}
   
   \clearpage
   
-  \section{Die Software-Agenten Suite}
-  \label{sec:die_software_agenten_suite}
-  \input{TeX/6.0-software-agenten-suite}
+  \section{Eigener Software-Agent}
+  \label{sec:eigener_software-agent}
+  \input{TeX/6.1-wwweb}
+  \input{TeX/6.2-auswertung-wwweb}
   
-  \include{TeX/9.0-bibliography}
+  \include{TeX/7.0-zusammenfassung}
+  
+  \clearpage
+  
+  % Show Bibliography
+  \nocite{*}
+  \printbibliography[category=cited]
+  
+  \clearpage
+  
+  \printbibliography[title={Weiterführende Literatur},notcategory=cited]
 \end{document}
