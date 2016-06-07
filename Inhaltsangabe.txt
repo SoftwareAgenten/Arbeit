@@ -43,6 +43,6 @@ P     5.3.2  Login-Versuche
 ✓   6.2  Auswertung der WWWEB-Daten
 ✓     6.2.1  Nicht zugelassene Verzeichnisse
 ✓     6.2.2  User-Agents
-  7  Zusammenfassung
+P 7  Zusammenfassung
   8  Weiterführende Literatur
 ✓ 9  Literaturverzeichnis
