@@ -1,7 +1,7 @@
 # Software-Agenten im Internet
 
 Menschen sind schon lange nicht mehr die alleinigen Nutzer des Internets.
-Beinahe 50 % aller Webseiten-Aufrufe werden von autonomer Software getätigt.
+Beinahe 50&thinsp;% aller Webseiten-Aufrufe werden von autonomer Software getätigt.
 Diese auch als Bots bezeichneten Softwares agieren in den Schatten des Netzes.
 Unbemerkt indexieren sie Webseiten, verbreiten Spam, legen gefälscht Profile
 an, oder versuchen in Datenbanken einzubrechen.
